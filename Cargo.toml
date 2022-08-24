@@ -2,6 +2,12 @@
 name = "engish"
 version = "0.1.0"
 edition = "2021"
+keywords = ["language", "words", "english"]
+categories = ["text-processing"]
+authors = ["Fishy"]
+readme = "README.md"
+repository = "https://github.com/fishykins/engish/"
+license = "MIT OR Apache-2.0"
 
 [features]
 default = ["words", "nouns"]

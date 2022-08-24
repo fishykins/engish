@@ -4,11 +4,14 @@ use serde::{Deserialize, Serialize};
 use std::{fmt::Display, fs::File};
 use crate::VOWLES;
 
+/// A macro used to quickly construct an n-gram type.
 #[macro_export]
 macro_rules! n_gram(
     ($T: ident, $n: literal) => {
         #[derive(Debug, Deserialize, Serialize, Clone)]
+        /// n-gram type.
         pub struct $T {
+            /// The characters contained by this type.
             pub chars: [char; $n],
             frequency: f32,
         }
@@ -48,14 +51,21 @@ macro_rules! n_gram(
     }
 );
 
+/// A trait that annotates anything that can have "frequency".
 pub trait Frequency {
+    /// Returns the frequency value of self.
     fn frequency(&self) -> f32;
 }
 
+/// A trait that annotates something that can be considered alphabetical.
 pub trait AlphabetType {
+    /// Returns true if any of the characters in this type are vowels.
     fn contains_vowel(&self) -> bool;
+    /// Returns true if any of the characters in this type are consonants.
     fn contains_consonant(&self) -> bool;
+    /// Returns true if *all* characters in this type are vowels.
     fn is_consonant(&self) -> bool;
+    /// Returns true if *all* characters in this type are consonants.
     fn is_vowel(&self) -> bool;
 }
 
@@ -69,6 +79,7 @@ impl From<&Letter> for char {
     }
 }
 
+/// A sampler for n-grams.
 #[derive(Clone, Debug)]
 pub struct NGramSampler<T>
 where
@@ -86,6 +97,7 @@ impl<T> NGramSampler<T>
 where
     T: Display + Frequency + Clone + AlphabetType,
 {
+    /// Builds a new sampler using the given alphabet.
     pub fn new(alphabet: Vec<T>) -> Self {
         let l = alphabet.len();
         let mut vowels = Vec::new();
@@ -117,22 +129,27 @@ where
         }
     }
 
+    /// Takes a random value using a weighted frequency.
     pub fn sample(&self, rng: &mut ThreadRng) -> &T {
         &self.alphabet[self.weights.sample(rng)]
     }
 
+    /// Takes a random vowel, using weight frequencies.
     pub fn sample_vowels(&self, rng: &mut ThreadRng) -> &T {
         &self.alphabet[self.vowels[self.vowel_weights.sample(rng)]]
     }
 
+    /// Takes a random consonant, using weight frequencies.
     pub fn sample_consonants(&self, rng: &mut ThreadRng) -> &T {
         &self.alphabet[self.consonants[self.consonant_weights.sample(rng)]]
     }
 
+    /// Returns a refference to the entire sample set of alphabetical data.
     pub fn sample_set(&self) -> Vec<&T> {
         return self.alphabet.iter().map(|x| x).collect()
     }
 
+    /// Returns the length of the sample set.
     pub fn len(&self) -> usize {
         self.alphabet.len()
     }

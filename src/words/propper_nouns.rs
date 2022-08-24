@@ -12,6 +12,7 @@ pub struct NounBuilder {
 }
 
 impl NounBuilder {
+    /// Builds a new noun builder.
     pub fn new() -> Self {
         Self {
             digraphs: Default::default(),
