@@ -2,6 +2,7 @@
 name = "engish"
 version = "0.1.0"
 edition = "2021"
+description = "A language utility for sampling letters and building words."
 keywords = ["language", "words", "english"]
 categories = ["text-processing"]
 authors = ["Fishy"]
