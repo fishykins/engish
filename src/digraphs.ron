@@ -1,0 +1,1982 @@
+[
+    /*[0]*/ (
+        chars: ('a', 'a'),
+        frequency: 0.000030000001,
+    ),
+    /*[1]*/ (
+        chars: ('b', 'a'),
+        frequency: 0.0014599999,
+    ),
+    /*[2]*/ (
+        chars: ('c', 'a'),
+        frequency: 0.00538,
+    ),
+    /*[3]*/ (
+        chars: ('d', 'a'),
+        frequency: 0.00151,
+    ),
+    /*[4]*/ (
+        chars: ('e', 'a'),
+        frequency: 0.0068800002,
+    ),
+    /*[5]*/ (
+        chars: ('f', 'a'),
+        frequency: 0.00164,
+    ),
+    /*[6]*/ (
+        chars: ('g', 'a'),
+        frequency: 0.00148,
+    ),
+    /*[7]*/ (
+        chars: ('h', 'a'),
+        frequency: 0.00926,
+    ),
+    /*[8]*/ (
+        chars: ('i', 'a'),
+        frequency: 0.0028600001,
+    ),
+    /*[9]*/ (
+        chars: ('j', 'a'),
+        frequency: 0.00026,
+    ),
+    /*[10]*/ (
+        chars: ('k', 'a'),
+        frequency: 0.00017000001,
+    ),
+    /*[11]*/ (
+        chars: ('l', 'a'),
+        frequency: 0.00528,
+    ),
+    /*[12]*/ (
+        chars: ('m', 'a'),
+        frequency: 0.00565,
+    ),
+    /*[13]*/ (
+        chars: ('n', 'a'),
+        frequency: 0.00347,
+    ),
+    /*[14]*/ (
+        chars: ('o', 'a'),
+        frequency: 0.00057,
+    ),
+    /*[15]*/ (
+        chars: ('p', 'a'),
+        frequency: 0.00324,
+    ),
+    /*[16]*/ (
+        chars: ('r', 'a'),
+        frequency: 0.00686,
+    ),
+    /*[17]*/ (
+        chars: ('s', 'a'),
+        frequency: 0.0021799998,
+    ),
+    /*[18]*/ (
+        chars: ('t', 'a'),
+        frequency: 0.0053,
+    ),
+    /*[19]*/ (
+        chars: ('u', 'a'),
+        frequency: 0.0013600001,
+    ),
+    /*[20]*/ (
+        chars: ('v', 'a'),
+        frequency: 0.0014,
+    ),
+    /*[21]*/ (
+        chars: ('w', 'a'),
+        frequency: 0.00385,
+    ),
+    /*[22]*/ (
+        chars: ('x', 'a'),
+        frequency: 0.00029999999,
+    ),
+    /*[23]*/ (
+        chars: ('y', 'a'),
+        frequency: 0.00016000001,
+    ),
+    /*[24]*/ (
+        chars: ('z', 'a'),
+        frequency: 0.00025,
+    ),
+    /*[25]*/ (
+        chars: ('a', 'b'),
+        frequency: 0.0023,
+    ),
+    /*[26]*/ (
+        chars: ('b', 'b'),
+        frequency: 0.00011,
+    ),
+    /*[27]*/ (
+        chars: ('c', 'b'),
+        frequency: 0.000010000001,
+    ),
+    /*[28]*/ (
+        chars: ('d', 'b'),
+        frequency: 0.000030000001,
+    ),
+    /*[29]*/ (
+        chars: ('e', 'b'),
+        frequency: 0.00027000002,
+    ),
+    /*[30]*/ (
+        chars: ('h', 'b'),
+        frequency: 0.000040000003,
+    ),
+    /*[31]*/ (
+        chars: ('i', 'b'),
+        frequency: 0.00099,
+    ),
+    /*[32]*/ (
+        chars: ('k', 'b'),
+        frequency: 0.000010000001,
+    ),
+    /*[33]*/ (
+        chars: ('l', 'b'),
+        frequency: 0.00007,
+    ),
+    /*[34]*/ (
+        chars: ('m', 'b'),
+        frequency: 0.00090000004,
+    ),
+    /*[35]*/ (
+        chars: ('n', 'b'),
+        frequency: 0.000040000003,
+    ),
+    /*[36]*/ (
+        chars: ('o', 'b'),
+        frequency: 0.00097000005,
+    ),
+    /*[37]*/ (
+        chars: ('p', 'b'),
+        frequency: 0.000010000001,
+    ),
+    /*[38]*/ (
+        chars: ('r', 'b'),
+        frequency: 0.00027000002,
+    ),
+    /*[39]*/ (
+        chars: ('s', 'b'),
+        frequency: 0.000080000005,
+    ),
+    /*[40]*/ (
+        chars: ('t', 'b'),
+        frequency: 0.000030000001,
+    ),
+    /*[41]*/ (
+        chars: ('u', 'b'),
+        frequency: 0.00089,
+    ),
+    /*[42]*/ (
+        chars: ('w', 'b'),
+        frequency: 0.000010000001,
+    ),
+    /*[43]*/ (
+        chars: ('y', 'b'),
+        frequency: 0.000040000003,
+    ),
+    /*[44]*/ (
+        chars: ('a', 'c'),
+        frequency: 0.00448,
+    ),
+    /*[45]*/ (
+        chars: ('b', 'c'),
+        frequency: 0.000020000001,
+    ),
+    /*[46]*/ (
+        chars: ('c', 'c'),
+        frequency: 0.00083,
+    ),
+    /*[47]*/ (
+        chars: ('d', 'c'),
+        frequency: 0.000030000001,
+    ),
+    /*[48]*/ (
+        chars: ('e', 'c'),
+        frequency: 0.00477,
+    ),
+    /*[49]*/ (
+        chars: ('f', 'c'),
+        frequency: 0.000010000001,
+    ),
+    /*[50]*/ (
+        chars: ('h', 'c'),
+        frequency: 0.000010000001,
+    ),
+    /*[51]*/ (
+        chars: ('i', 'c'),
+        frequency: 0.00699,
+    ),
+    /*[52]*/ (
+        chars: ('l', 'c'),
+        frequency: 0.000120000004,
+    ),
+    /*[53]*/ (
+        chars: ('m', 'c'),
+        frequency: 0.000040000003,
+    ),
+    /*[54]*/ (
+        chars: ('n', 'c'),
+        frequency: 0.00416,
+    ),
+    /*[55]*/ (
+        chars: ('o', 'c'),
+        frequency: 0.00166,
+    ),
+    /*[56]*/ (
+        chars: ('p', 'c'),
+        frequency: 0.000010000001,
+    ),
+    /*[57]*/ (
+        chars: ('r', 'c'),
+        frequency: 0.00121,
+    ),
+    /*[58]*/ (
+        chars: ('s', 'c'),
+        frequency: 0.00155,
+    ),
+    /*[59]*/ (
+        chars: ('t', 'c'),
+        frequency: 0.00026,
+    ),
+    /*[60]*/ (
+        chars: ('u', 'c'),
+        frequency: 0.0018799999,
+    ),
+    /*[61]*/ (
+        chars: ('w', 'c'),
+        frequency: 0.000010000001,
+    ),
+    /*[62]*/ (
+        chars: ('x', 'c'),
+        frequency: 0.00026,
+    ),
+    /*[63]*/ (
+        chars: ('y', 'c'),
+        frequency: 0.00014,
+    ),
+    /*[64]*/ (
+        chars: ('a', 'd'),
+        frequency: 0.00368,
+    ),
+    /*[65]*/ (
+        chars: ('b', 'd'),
+        frequency: 0.000020000001,
+    ),
+    /*[66]*/ (
+        chars: ('c', 'd'),
+        frequency: 0.000020000001,
+    ),
+    /*[67]*/ (
+        chars: ('d', 'd'),
+        frequency: 0.00043000001,
+    ),
+    /*[68]*/ (
+        chars: ('e', 'd'),
+        frequency: 0.0116799995,
+    ),
+    /*[69]*/ (
+        chars: ('g', 'd'),
+        frequency: 0.000030000001,
+    ),
+    /*[70]*/ (
+        chars: ('h', 'd'),
+        frequency: 0.000030000001,
+    ),
+    /*[71]*/ (
+        chars: ('i', 'd'),
+        frequency: 0.00296,
+    ),
+    /*[72]*/ (
+        chars: ('k', 'd'),
+        frequency: 0.000010000001,
+    ),
+    /*[73]*/ (
+        chars: ('l', 'd'),
+        frequency: 0.00253,
+    ),
+    /*[74]*/ (
+        chars: ('m', 'd'),
+        frequency: 0.000010000001,
+    ),
+    /*[75]*/ (
+        chars: ('n', 'd'),
+        frequency: 0.01352,
+    ),
+    /*[76]*/ (
+        chars: ('o', 'd'),
+        frequency: 0.00195,
+    ),
+    /*[77]*/ (
+        chars: ('p', 'd'),
+        frequency: 0.000010000001,
+    ),
+    /*[78]*/ (
+        chars: ('r', 'd'),
+        frequency: 0.00189,
+    ),
+    /*[79]*/ (
+        chars: ('s', 'd'),
+        frequency: 0.00005,
+    ),
+    /*[80]*/ (
+        chars: ('t', 'd'),
+        frequency: 0.000010000001,
+    ),
+    /*[81]*/ (
+        chars: ('u', 'd'),
+        frequency: 0.00091,
+    ),
+    /*[82]*/ (
+        chars: ('w', 'd'),
+        frequency: 0.000040000003,
+    ),
+    /*[83]*/ (
+        chars: ('y', 'd'),
+        frequency: 0.00007,
+    ),
+    /*[84]*/ (
+        chars: ('a', 'e'),
+        frequency: 0.000120000004,
+    ),
+    /*[85]*/ (
+        chars: ('b', 'e'),
+        frequency: 0.0057599996,
+    ),
+    /*[86]*/ (
+        chars: ('c', 'e'),
+        frequency: 0.00651,
+    ),
+    /*[87]*/ (
+        chars: ('d', 'e'),
+        frequency: 0.00765,
+    ),
+    /*[88]*/ (
+        chars: ('e', 'e'),
+        frequency: 0.00378,
+    ),
+    /*[89]*/ (
+        chars: ('f', 'e'),
+        frequency: 0.0023700001,
+    ),
+    /*[90]*/ (
+        chars: ('g', 'e'),
+        frequency: 0.00385,
+    ),
+    /*[91]*/ (
+        chars: ('h', 'e'),
+        frequency: 0.03075,
+    ),
+    /*[92]*/ (
+        chars: ('i', 'e'),
+        frequency: 0.00385,
+    ),
+    /*[93]*/ (
+        chars: ('j', 'e'),
+        frequency: 0.00052,
+    ),
+    /*[94]*/ (
+        chars: ('k', 'e'),
+        frequency: 0.00214,
+    ),
+    /*[95]*/ (
+        chars: ('l', 'e'),
+        frequency: 0.00829,
+    ),
+    /*[96]*/ (
+        chars: ('m', 'e'),
+        frequency: 0.007929999,
+    ),
+    /*[97]*/ (
+        chars: ('n', 'e'),
+        frequency: 0.0069199996,
+    ),
+    /*[98]*/ (
+        chars: ('o', 'e'),
+        frequency: 0.00039,
+    ),
+    /*[99]*/ (
+        chars: ('p', 'e'),
+        frequency: 0.00478,
+    ),
+    /*[100]*/ (
+        chars: ('r', 'e'),
+        frequency: 0.01854,
+    ),
+    /*[101]*/ (
+        chars: ('s', 'e'),
+        frequency: 0.00932,
+    ),
+    /*[102]*/ (
+        chars: ('t', 'e'),
+        frequency: 0.01205,
+    ),
+    /*[103]*/ (
+        chars: ('u', 'e'),
+        frequency: 0.00147,
+    ),
+    /*[104]*/ (
+        chars: ('v', 'e'),
+        frequency: 0.00825,
+    ),
+    /*[105]*/ (
+        chars: ('w', 'e'),
+        frequency: 0.00361,
+    ),
+    /*[106]*/ (
+        chars: ('x', 'e'),
+        frequency: 0.00022,
+    ),
+    /*[107]*/ (
+        chars: ('y', 'e'),
+        frequency: 0.00093000004,
+    ),
+    /*[108]*/ (
+        chars: ('z', 'e'),
+        frequency: 0.0005,
+    ),
+    /*[109]*/ (
+        chars: ('a', 'f'),
+        frequency: 0.00074,
+    ),
+    /*[110]*/ (
+        chars: ('c', 'f'),
+        frequency: 0.000010000001,
+    ),
+    /*[111]*/ (
+        chars: ('d', 'f'),
+        frequency: 0.000030000001,
+    ),
+    /*[112]*/ (
+        chars: ('e', 'f'),
+        frequency: 0.0016300001,
+    ),
+    /*[113]*/ (
+        chars: ('f', 'f'),
+        frequency: 0.0014599999,
+    ),
+    /*[114]*/ (
+        chars: ('g', 'f'),
+        frequency: 0.000010000001,
+    ),
+    /*[115]*/ (
+        chars: ('h', 'f'),
+        frequency: 0.000020000001,
+    ),
+    /*[116]*/ (
+        chars: ('i', 'f'),
+        frequency: 0.0020299999,
+    ),
+    /*[117]*/ (
+        chars: ('k', 'f'),
+        frequency: 0.000020000001,
+    ),
+    /*[118]*/ (
+        chars: ('l', 'f'),
+        frequency: 0.00053,
+    ),
+    /*[119]*/ (
+        chars: ('m', 'f'),
+        frequency: 0.000040000003,
+    ),
+    /*[120]*/ (
+        chars: ('n', 'f'),
+        frequency: 0.00067000004,
+    ),
+    /*[121]*/ (
+        chars: ('o', 'f'),
+        frequency: 0.01175,
+    ),
+    /*[122]*/ (
+        chars: ('p', 'f'),
+        frequency: 0.000010000001,
+    ),
+    /*[123]*/ (
+        chars: ('r', 'f'),
+        frequency: 0.00032000002,
+    ),
+    /*[124]*/ (
+        chars: ('s', 'f'),
+        frequency: 0.00017000001,
+    ),
+    /*[125]*/ (
+        chars: ('t', 'f'),
+        frequency: 0.000060000002,
+    ),
+    /*[126]*/ (
+        chars: ('u', 'f'),
+        frequency: 0.00018999999,
+    ),
+    /*[127]*/ (
+        chars: ('w', 'f'),
+        frequency: 0.000020000001,
+    ),
+    /*[128]*/ (
+        chars: ('x', 'f'),
+        frequency: 0.000020000001,
+    ),
+    /*[129]*/ (
+        chars: ('y', 'f'),
+        frequency: 0.000010000001,
+    ),
+    /*[130]*/ (
+        chars: ('a', 'g'),
+        frequency: 0.00205,
+    ),
+    /*[131]*/ (
+        chars: ('c', 'g'),
+        frequency: 0.000010000001,
+    ),
+    /*[132]*/ (
+        chars: ('d', 'g'),
+        frequency: 0.00031,
+    ),
+    /*[133]*/ (
+        chars: ('e', 'g'),
+        frequency: 0.0011999999,
+    ),
+    /*[134]*/ (
+        chars: ('f', 'g'),
+        frequency: 0.000010000001,
+    ),
+    /*[135]*/ (
+        chars: ('g', 'g'),
+        frequency: 0.00025,
+    ),
+    /*[136]*/ (
+        chars: ('i', 'g'),
+        frequency: 0.0025499999,
+    ),
+    /*[137]*/ (
+        chars: ('k', 'g'),
+        frequency: 0.000030000001,
+    ),
+    /*[138]*/ (
+        chars: ('l', 'g'),
+        frequency: 0.000060000002,
+    ),
+    /*[139]*/ (
+        chars: ('m', 'g'),
+        frequency: 0.000010000001,
+    ),
+    /*[140]*/ (
+        chars: ('n', 'g'),
+        frequency: 0.00953,
+    ),
+    /*[141]*/ (
+        chars: ('o', 'g'),
+        frequency: 0.00093999994,
+    ),
+    /*[142]*/ (
+        chars: ('r', 'g'),
+        frequency: 0.001,
+    ),
+    /*[143]*/ (
+        chars: ('s', 'g'),
+        frequency: 0.000020000001,
+    ),
+    /*[144]*/ (
+        chars: ('t', 'g'),
+        frequency: 0.000020000001,
+    ),
+    /*[145]*/ (
+        chars: ('u', 'g'),
+        frequency: 0.0012800001,
+    ),
+    /*[146]*/ (
+        chars: ('y', 'g'),
+        frequency: 0.000030000001,
+    ),
+    /*[147]*/ (
+        chars: ('a', 'h'),
+        frequency: 0.00014,
+    ),
+    /*[148]*/ (
+        chars: ('b', 'h'),
+        frequency: 0.000010000001,
+    ),
+    /*[149]*/ (
+        chars: ('c', 'h'),
+        frequency: 0.00598,
+    ),
+    /*[150]*/ (
+        chars: ('d', 'h'),
+        frequency: 0.00005,
+    ),
+    /*[151]*/ (
+        chars: ('e', 'h'),
+        frequency: 0.00026,
+    ),
+    /*[152]*/ (
+        chars: ('g', 'h'),
+        frequency: 0.00228,
+    ),
+    /*[153]*/ (
+        chars: ('h', 'h'),
+        frequency: 0.000010000001,
+    ),
+    /*[154]*/ (
+        chars: ('i', 'h'),
+        frequency: 0.000020000001,
+    ),
+    /*[155]*/ (
+        chars: ('k', 'h'),
+        frequency: 0.000030000001,
+    ),
+    /*[156]*/ (
+        chars: ('l', 'h'),
+        frequency: 0.000020000001,
+    ),
+    /*[157]*/ (
+        chars: ('m', 'h'),
+        frequency: 0.000010000001,
+    ),
+    /*[158]*/ (
+        chars: ('n', 'h'),
+        frequency: 0.00011,
+    ),
+    /*[159]*/ (
+        chars: ('o', 'h'),
+        frequency: 0.00021,
+    ),
+    /*[160]*/ (
+        chars: ('p', 'h'),
+        frequency: 0.00093999994,
+    ),
+    /*[161]*/ (
+        chars: ('r', 'h'),
+        frequency: 0.00014999999,
+    ),
+    /*[162]*/ (
+        chars: ('s', 'h'),
+        frequency: 0.00315,
+    ),
+    /*[163]*/ (
+        chars: ('t', 'h'),
+        frequency: 0.03556,
+    ),
+    /*[164]*/ (
+        chars: ('u', 'h'),
+        frequency: 0.000010000001,
+    ),
+    /*[165]*/ (
+        chars: ('w', 'h'),
+        frequency: 0.00379,
+    ),
+    /*[166]*/ (
+        chars: ('x', 'h'),
+        frequency: 0.000040000003,
+    ),
+    /*[167]*/ (
+        chars: ('y', 'h'),
+        frequency: 0.000010000001,
+    ),
+    /*[168]*/ (
+        chars: ('z', 'h'),
+        frequency: 0.000010000001,
+    ),
+    /*[169]*/ (
+        chars: ('a', 'i'),
+        frequency: 0.00316,
+    ),
+    /*[170]*/ (
+        chars: ('b', 'i'),
+        frequency: 0.00107,
+    ),
+    /*[171]*/ (
+        chars: ('c', 'i'),
+        frequency: 0.00281,
+    ),
+    /*[172]*/ (
+        chars: ('d', 'i'),
+        frequency: 0.00493,
+    ),
+    /*[173]*/ (
+        chars: ('e', 'i'),
+        frequency: 0.00183,
+    ),
+    /*[174]*/ (
+        chars: ('f', 'i'),
+        frequency: 0.00285,
+    ),
+    /*[175]*/ (
+        chars: ('g', 'i'),
+        frequency: 0.0015199999,
+    ),
+    /*[176]*/ (
+        chars: ('h', 'i'),
+        frequency: 0.00763,
+    ),
+    /*[177]*/ (
+        chars: ('i', 'i'),
+        frequency: 0.00023,
+    ),
+    /*[178]*/ (
+        chars: ('j', 'i'),
+        frequency: 0.000030000001,
+    ),
+    /*[179]*/ (
+        chars: ('k', 'i'),
+        frequency: 0.00098,
+    ),
+    /*[180]*/ (
+        chars: ('l', 'i'),
+        frequency: 0.00624,
+    ),
+    /*[181]*/ (
+        chars: ('m', 'i'),
+        frequency: 0.00318,
+    ),
+    /*[182]*/ (
+        chars: ('n', 'i'),
+        frequency: 0.00339,
+    ),
+    /*[183]*/ (
+        chars: ('o', 'i'),
+        frequency: 0.00088,
+    ),
+    /*[184]*/ (
+        chars: ('p', 'i'),
+        frequency: 0.00123,
+    ),
+    /*[185]*/ (
+        chars: ('r', 'i'),
+        frequency: 0.00728,
+    ),
+    /*[186]*/ (
+        chars: ('s', 'i'),
+        frequency: 0.0055,
+    ),
+    /*[187]*/ (
+        chars: ('t', 'i'),
+        frequency: 0.01343,
+    ),
+    /*[188]*/ (
+        chars: ('u', 'i'),
+        frequency: 0.00101,
+    ),
+    /*[189]*/ (
+        chars: ('v', 'i'),
+        frequency: 0.0027,
+    ),
+    /*[190]*/ (
+        chars: ('w', 'i'),
+        frequency: 0.00374,
+    ),
+    /*[191]*/ (
+        chars: ('x', 'i'),
+        frequency: 0.00039,
+    ),
+    /*[192]*/ (
+        chars: ('y', 'i'),
+        frequency: 0.00029,
+    ),
+    /*[193]*/ (
+        chars: ('z', 'i'),
+        frequency: 0.000120000004,
+    ),
+    /*[194]*/ (
+        chars: ('a', 'j'),
+        frequency: 0.000120000004,
+    ),
+    /*[195]*/ (
+        chars: ('b', 'j'),
+        frequency: 0.00023,
+    ),
+    /*[196]*/ (
+        chars: ('d', 'j'),
+        frequency: 0.00005,
+    ),
+    /*[197]*/ (
+        chars: ('e', 'j'),
+        frequency: 0.00005,
+    ),
+    /*[198]*/ (
+        chars: ('i', 'j'),
+        frequency: 0.000010000001,
+    ),
+    /*[199]*/ (
+        chars: ('n', 'j'),
+        frequency: 0.00011,
+    ),
+    /*[200]*/ (
+        chars: ('o', 'j'),
+        frequency: 0.00007,
+    ),
+    /*[201]*/ (
+        chars: ('r', 'j'),
+        frequency: 0.000010000001,
+    ),
+    /*[202]*/ (
+        chars: ('u', 'j'),
+        frequency: 0.000010000001,
+    ),
+    /*[203]*/ (
+        chars: ('a', 'k'),
+        frequency: 0.00105,
+    ),
+    /*[204]*/ (
+        chars: ('c', 'k'),
+        frequency: 0.00118,
+    ),
+    /*[205]*/ (
+        chars: ('e', 'k'),
+        frequency: 0.00016000001,
+    ),
+    /*[206]*/ (
+        chars: ('i', 'k'),
+        frequency: 0.00043000001,
+    ),
+    /*[207]*/ (
+        chars: ('l', 'k'),
+        frequency: 0.0002,
+    ),
+    /*[208]*/ (
+        chars: ('n', 'k'),
+        frequency: 0.00052,
+    ),
+    /*[209]*/ (
+        chars: ('o', 'k'),
+        frequency: 0.00064000004,
+    ),
+    /*[210]*/ (
+        chars: ('p', 'k'),
+        frequency: 0.000010000001,
+    ),
+    /*[211]*/ (
+        chars: ('r', 'k'),
+        frequency: 0.00097000005,
+    ),
+    /*[212]*/ (
+        chars: ('s', 'k'),
+        frequency: 0.00039,
+    ),
+    /*[213]*/ (
+        chars: ('u', 'k'),
+        frequency: 0.00005,
+    ),
+    /*[214]*/ (
+        chars: ('w', 'k'),
+        frequency: 0.000010000001,
+    ),
+    /*[215]*/ (
+        chars: ('a', 'l'),
+        frequency: 0.01087,
+    ),
+    /*[216]*/ (
+        chars: ('b', 'l'),
+        frequency: 0.00233,
+    ),
+    /*[217]*/ (
+        chars: ('c', 'l'),
+        frequency: 0.00149,
+    ),
+    /*[218]*/ (
+        chars: ('d', 'l'),
+        frequency: 0.00032000002,
+    ),
+    /*[219]*/ (
+        chars: ('e', 'l'),
+        frequency: 0.0053,
+    ),
+    /*[220]*/ (
+        chars: ('f', 'l'),
+        frequency: 0.00065,
+    ),
+    /*[221]*/ (
+        chars: ('g', 'l'),
+        frequency: 0.00061,
+    ),
+    /*[222]*/ (
+        chars: ('h', 'l'),
+        frequency: 0.00013,
+    ),
+    /*[223]*/ (
+        chars: ('i', 'l'),
+        frequency: 0.0043200003,
+    ),
+    /*[224]*/ (
+        chars: ('k', 'l'),
+        frequency: 0.00011,
+    ),
+    /*[225]*/ (
+        chars: ('l', 'l'),
+        frequency: 0.00577,
+    ),
+    /*[226]*/ (
+        chars: ('m', 'l'),
+        frequency: 0.00005,
+    ),
+    /*[227]*/ (
+        chars: ('n', 'l'),
+        frequency: 0.00064000004,
+    ),
+    /*[228]*/ (
+        chars: ('o', 'l'),
+        frequency: 0.00365,
+    ),
+    /*[229]*/ (
+        chars: ('p', 'l'),
+        frequency: 0.00263,
+    ),
+    /*[230]*/ (
+        chars: ('r', 'l'),
+        frequency: 0.00086000003,
+    ),
+    /*[231]*/ (
+        chars: ('s', 'l'),
+        frequency: 0.00056,
+    ),
+    /*[232]*/ (
+        chars: ('t', 'l'),
+        frequency: 0.00098,
+    ),
+    /*[233]*/ (
+        chars: ('u', 'l'),
+        frequency: 0.0034599998,
+    ),
+    /*[234]*/ (
+        chars: ('w', 'l'),
+        frequency: 0.00014999999,
+    ),
+    /*[235]*/ (
+        chars: ('x', 'l'),
+        frequency: 0.000010000001,
+    ),
+    /*[236]*/ (
+        chars: ('y', 'l'),
+        frequency: 0.00014999999,
+    ),
+    /*[237]*/ (
+        chars: ('z', 'l'),
+        frequency: 0.000010000001,
+    ),
+    /*[238]*/ (
+        chars: ('a', 'm'),
+        frequency: 0.00285,
+    ),
+    /*[239]*/ (
+        chars: ('b', 'm'),
+        frequency: 0.000030000001,
+    ),
+    /*[240]*/ (
+        chars: ('c', 'm'),
+        frequency: 0.000030000001,
+    ),
+    /*[241]*/ (
+        chars: ('d', 'm'),
+        frequency: 0.00017999999,
+    ),
+    /*[242]*/ (
+        chars: ('e', 'm'),
+        frequency: 0.00374,
+    ),
+    /*[243]*/ (
+        chars: ('f', 'm'),
+        frequency: 0.000010000001,
+    ),
+    /*[244]*/ (
+        chars: ('g', 'm'),
+        frequency: 0.0001,
+    ),
+    /*[245]*/ (
+        chars: ('h', 'm'),
+        frequency: 0.00013,
+    ),
+    /*[246]*/ (
+        chars: ('i', 'm'),
+        frequency: 0.00318,
+    ),
+    /*[247]*/ (
+        chars: ('k', 'm'),
+        frequency: 0.000020000001,
+    ),
+    /*[248]*/ (
+        chars: ('l', 'm'),
+        frequency: 0.00023,
+    ),
+    /*[249]*/ (
+        chars: ('m', 'm'),
+        frequency: 0.00096000003,
+    ),
+    /*[250]*/ (
+        chars: ('n', 'm'),
+        frequency: 0.00028,
+    ),
+    /*[251]*/ (
+        chars: ('o', 'm'),
+        frequency: 0.00546,
+    ),
+    /*[252]*/ (
+        chars: ('p', 'm'),
+        frequency: 0.00016000001,
+    ),
+    /*[253]*/ (
+        chars: ('r', 'm'),
+        frequency: 0.0017499999,
+    ),
+    /*[254]*/ (
+        chars: ('s', 'm'),
+        frequency: 0.00065,
+    ),
+    /*[255]*/ (
+        chars: ('t', 'm'),
+        frequency: 0.00026,
+    ),
+    /*[256]*/ (
+        chars: ('u', 'm'),
+        frequency: 0.0013799999,
+    ),
+    /*[257]*/ (
+        chars: ('w', 'm'),
+        frequency: 0.000010000001,
+    ),
+    /*[258]*/ (
+        chars: ('y', 'm'),
+        frequency: 0.00024000001,
+    ),
+    /*[259]*/ (
+        chars: ('a', 'n'),
+        frequency: 0.01985,
+    ),
+    /*[260]*/ (
+        chars: ('b', 'n'),
+        frequency: 0.000020000001,
+    ),
+    /*[261]*/ (
+        chars: ('c', 'n'),
+        frequency: 0.000010000001,
+    ),
+    /*[262]*/ (
+        chars: ('d', 'n'),
+        frequency: 0.000080000005,
+    ),
+    /*[263]*/ (
+        chars: ('e', 'n'),
+        frequency: 0.01454,
+    ),
+    /*[264]*/ (
+        chars: ('g', 'n'),
+        frequency: 0.00066,
+    ),
+    /*[265]*/ (
+        chars: ('h', 'n'),
+        frequency: 0.00026,
+    ),
+    /*[266]*/ (
+        chars: ('i', 'n'),
+        frequency: 0.024330001,
+    ),
+    /*[267]*/ (
+        chars: ('k', 'n'),
+        frequency: 0.00051,
+    ),
+    /*[268]*/ (
+        chars: ('l', 'n'),
+        frequency: 0.000060000002,
+    ),
+    /*[269]*/ (
+        chars: ('m', 'n'),
+        frequency: 0.000089999994,
+    ),
+    /*[270]*/ (
+        chars: ('n', 'n'),
+        frequency: 0.00072999997,
+    ),
+    /*[271]*/ (
+        chars: ('o', 'n'),
+        frequency: 0.01758,
+    ),
+    /*[272]*/ (
+        chars: ('p', 'n'),
+        frequency: 0.000010000001,
+    ),
+    /*[273]*/ (
+        chars: ('r', 'n'),
+        frequency: 0.0016,
+    ),
+    /*[274]*/ (
+        chars: ('s', 'n'),
+        frequency: 0.000089999994,
+    ),
+    /*[275]*/ (
+        chars: ('t', 'n'),
+        frequency: 0.0001,
+    ),
+    /*[276]*/ (
+        chars: ('u', 'n'),
+        frequency: 0.0039399997,
+    ),
+    /*[277]*/ (
+        chars: ('w', 'n'),
+        frequency: 0.00079,
+    ),
+    /*[278]*/ (
+        chars: ('y', 'n'),
+        frequency: 0.00013,
+    ),
+    /*[279]*/ (
+        chars: ('a', 'o'),
+        frequency: 0.00005,
+    ),
+    /*[280]*/ (
+        chars: ('b', 'o'),
+        frequency: 0.00195,
+    ),
+    /*[281]*/ (
+        chars: ('c', 'o'),
+        frequency: 0.00794,
+    ),
+    /*[282]*/ (
+        chars: ('d', 'o'),
+        frequency: 0.0018799999,
+    ),
+    /*[283]*/ (
+        chars: ('e', 'o'),
+        frequency: 0.00072999997,
+    ),
+    /*[284]*/ (
+        chars: ('f', 'o'),
+        frequency: 0.00488,
+    ),
+    /*[285]*/ (
+        chars: ('g', 'o'),
+        frequency: 0.00132,
+    ),
+    /*[286]*/ (
+        chars: ('h', 'o'),
+        frequency: 0.00485,
+    ),
+    /*[287]*/ (
+        chars: ('i', 'o'),
+        frequency: 0.00835,
+    ),
+    /*[288]*/ (
+        chars: ('j', 'o'),
+        frequency: 0.00054000004,
+    ),
+    /*[289]*/ (
+        chars: ('k', 'o'),
+        frequency: 0.000060000002,
+    ),
+    /*[290]*/ (
+        chars: ('l', 'o'),
+        frequency: 0.00387,
+    ),
+    /*[291]*/ (
+        chars: ('m', 'o'),
+        frequency: 0.00337,
+    ),
+    /*[292]*/ (
+        chars: ('n', 'o'),
+        frequency: 0.00465,
+    ),
+    /*[293]*/ (
+        chars: ('o', 'o'),
+        frequency: 0.0021,
+    ),
+    /*[294]*/ (
+        chars: ('p', 'o'),
+        frequency: 0.00361,
+    ),
+    /*[295]*/ (
+        chars: ('r', 'o'),
+        frequency: 0.00727,
+    ),
+    /*[296]*/ (
+        chars: ('s', 'o'),
+        frequency: 0.00398,
+    ),
+    /*[297]*/ (
+        chars: ('t', 'o'),
+        frequency: 0.01041,
+    ),
+    /*[298]*/ (
+        chars: ('u', 'o'),
+        frequency: 0.00011,
+    ),
+    /*[299]*/ (
+        chars: ('v', 'o'),
+        frequency: 0.00071000005,
+    ),
+    /*[300]*/ (
+        chars: ('w', 'o'),
+        frequency: 0.0022200001,
+    ),
+    /*[301]*/ (
+        chars: ('x', 'o'),
+        frequency: 0.000030000001,
+    ),
+    /*[302]*/ (
+        chars: ('y', 'o'),
+        frequency: 0.0015,
+    ),
+    /*[303]*/ (
+        chars: ('z', 'o'),
+        frequency: 0.00007,
+    ),
+    /*[304]*/ (
+        chars: ('a', 'p'),
+        frequency: 0.0020299999,
+    ),
+    /*[305]*/ (
+        chars: ('b', 'p'),
+        frequency: 0.000010000001,
+    ),
+    /*[306]*/ (
+        chars: ('c', 'p'),
+        frequency: 0.000010000001,
+    ),
+    /*[307]*/ (
+        chars: ('d', 'p'),
+        frequency: 0.000020000001,
+    ),
+    /*[308]*/ (
+        chars: ('e', 'p'),
+        frequency: 0.0017200001,
+    ),
+    /*[309]*/ (
+        chars: ('h', 'p'),
+        frequency: 0.000010000001,
+    ),
+    /*[310]*/ (
+        chars: ('i', 'p'),
+        frequency: 0.00089,
+    ),
+    /*[311]*/ (
+        chars: ('k', 'p'),
+        frequency: 0.000010000001,
+    ),
+    /*[312]*/ (
+        chars: ('l', 'p'),
+        frequency: 0.00018999999,
+    ),
+    /*[313]*/ (
+        chars: ('m', 'p'),
+        frequency: 0.00239,
+    ),
+    /*[314]*/ (
+        chars: ('n', 'p'),
+        frequency: 0.000060000002,
+    ),
+    /*[315]*/ (
+        chars: ('o', 'p'),
+        frequency: 0.00224,
+    ),
+    /*[316]*/ (
+        chars: ('p', 'p'),
+        frequency: 0.00137,
+    ),
+    /*[317]*/ (
+        chars: ('r', 'p'),
+        frequency: 0.00042,
+    ),
+    /*[318]*/ (
+        chars: ('s', 'p'),
+        frequency: 0.00191,
+    ),
+    /*[319]*/ (
+        chars: ('t', 'p'),
+        frequency: 0.000040000003,
+    ),
+    /*[320]*/ (
+        chars: ('u', 'p'),
+        frequency: 0.0013600001,
+    ),
+    /*[321]*/ (
+        chars: ('w', 'p'),
+        frequency: 0.000010000001,
+    ),
+    /*[322]*/ (
+        chars: ('x', 'p'),
+        frequency: 0.00067000004,
+    ),
+    /*[323]*/ (
+        chars: ('y', 'p'),
+        frequency: 0.00025,
+    ),
+    /*[324]*/ (
+        chars: ('a', 'q'),
+        frequency: 0.000020000001,
+    ),
+    /*[325]*/ (
+        chars: ('c', 'q'),
+        frequency: 0.00005,
+    ),
+    /*[326]*/ (
+        chars: ('d', 'q'),
+        frequency: 0.000010000001,
+    ),
+    /*[327]*/ (
+        chars: ('e', 'q'),
+        frequency: 0.00057,
+    ),
+    /*[328]*/ (
+        chars: ('i', 'q'),
+        frequency: 0.00011,
+    ),
+    /*[329]*/ (
+        chars: ('n', 'q'),
+        frequency: 0.000060000002,
+    ),
+    /*[330]*/ (
+        chars: ('o', 'q'),
+        frequency: 0.000010000001,
+    ),
+    /*[331]*/ (
+        chars: ('r', 'q'),
+        frequency: 0.000010000001,
+    ),
+    /*[332]*/ (
+        chars: ('s', 'q'),
+        frequency: 0.00007,
+    ),
+    /*[333]*/ (
+        chars: ('a', 'r'),
+        frequency: 0.01075,
+    ),
+    /*[334]*/ (
+        chars: ('b', 'r'),
+        frequency: 0.00112,
+    ),
+    /*[335]*/ (
+        chars: ('c', 'r'),
+        frequency: 0.00149,
+    ),
+    /*[336]*/ (
+        chars: ('d', 'r'),
+        frequency: 0.00085,
+    ),
+    /*[337]*/ (
+        chars: ('e', 'r'),
+        frequency: 0.020480001,
+    ),
+    /*[338]*/ (
+        chars: ('f', 'r'),
+        frequency: 0.00213,
+    ),
+    /*[339]*/ (
+        chars: ('g', 'r'),
+        frequency: 0.0019699999,
+    ),
+    /*[340]*/ (
+        chars: ('h', 'r'),
+        frequency: 0.00084,
+    ),
+    /*[341]*/ (
+        chars: ('i', 'r'),
+        frequency: 0.00315,
+    ),
+    /*[342]*/ (
+        chars: ('k', 'r'),
+        frequency: 0.000030000001,
+    ),
+    /*[343]*/ (
+        chars: ('l', 'r'),
+        frequency: 0.0001,
+    ),
+    /*[344]*/ (
+        chars: ('m', 'r'),
+        frequency: 0.000030000001,
+    ),
+    /*[345]*/ (
+        chars: ('n', 'r'),
+        frequency: 0.000089999994,
+    ),
+    /*[346]*/ (
+        chars: ('o', 'r'),
+        frequency: 0.01277,
+    ),
+    /*[347]*/ (
+        chars: ('p', 'r'),
+        frequency: 0.0047400002,
+    ),
+    /*[348]*/ (
+        chars: ('r', 'r'),
+        frequency: 0.00121,
+    ),
+    /*[349]*/ (
+        chars: ('s', 'r'),
+        frequency: 0.000060000002,
+    ),
+    /*[350]*/ (
+        chars: ('t', 'r'),
+        frequency: 0.00426,
+    ),
+    /*[351]*/ (
+        chars: ('u', 'r'),
+        frequency: 0.00543,
+    ),
+    /*[352]*/ (
+        chars: ('v', 'r'),
+        frequency: 0.000010000001,
+    ),
+    /*[353]*/ (
+        chars: ('w', 'r'),
+        frequency: 0.00031,
+    ),
+    /*[354]*/ (
+        chars: ('y', 'r'),
+        frequency: 0.000080000005,
+    ),
+    /*[355]*/ (
+        chars: ('a', 's'),
+        frequency: 0.00871,
+    ),
+    /*[356]*/ (
+        chars: ('b', 's'),
+        frequency: 0.00046,
+    ),
+    /*[357]*/ (
+        chars: ('c', 's'),
+        frequency: 0.00023,
+    ),
+    /*[358]*/ (
+        chars: ('d', 's'),
+        frequency: 0.00126,
+    ),
+    /*[359]*/ (
+        chars: ('e', 's'),
+        frequency: 0.01339,
+    ),
+    /*[360]*/ (
+        chars: ('f', 's'),
+        frequency: 0.000060000002,
+    ),
+    /*[361]*/ (
+        chars: ('g', 's'),
+        frequency: 0.00051,
+    ),
+    /*[362]*/ (
+        chars: ('h', 's'),
+        frequency: 0.00014999999,
+    ),
+    /*[363]*/ (
+        chars: ('i', 's'),
+        frequency: 0.01128,
+    ),
+    /*[364]*/ (
+        chars: ('k', 's'),
+        frequency: 0.00048000002,
+    ),
+    /*[365]*/ (
+        chars: ('l', 's'),
+        frequency: 0.0014200001,
+    ),
+    /*[366]*/ (
+        chars: ('m', 's'),
+        frequency: 0.00093000004,
+    ),
+    /*[367]*/ (
+        chars: ('n', 's'),
+        frequency: 0.00509,
+    ),
+    /*[368]*/ (
+        chars: ('o', 's'),
+        frequency: 0.0029,
+    ),
+    /*[369]*/ (
+        chars: ('p', 's'),
+        frequency: 0.00055,
+    ),
+    /*[370]*/ (
+        chars: ('r', 's'),
+        frequency: 0.00397,
+    ),
+    /*[371]*/ (
+        chars: ('s', 's'),
+        frequency: 0.00405,
+    ),
+    /*[372]*/ (
+        chars: ('t', 's'),
+        frequency: 0.00337,
+    ),
+    /*[373]*/ (
+        chars: ('u', 's'),
+        frequency: 0.00454,
+    ),
+    /*[374]*/ (
+        chars: ('v', 's'),
+        frequency: 0.000010000001,
+    ),
+    /*[375]*/ (
+        chars: ('w', 's'),
+        frequency: 0.00035,
+    ),
+    /*[376]*/ (
+        chars: ('y', 's'),
+        frequency: 0.00097000005,
+    ),
+    /*[377]*/ (
+        chars: ('a', 't'),
+        frequency: 0.01487,
+    ),
+    /*[378]*/ (
+        chars: ('b', 't'),
+        frequency: 0.00017000001,
+    ),
+    /*[379]*/ (
+        chars: ('c', 't'),
+        frequency: 0.00461,
+    ),
+    /*[380]*/ (
+        chars: ('d', 't'),
+        frequency: 0.000030000001,
+    ),
+    /*[381]*/ (
+        chars: ('e', 't'),
+        frequency: 0.00413,
+    ),
+    /*[382]*/ (
+        chars: ('f', 't'),
+        frequency: 0.00082,
+    ),
+    /*[383]*/ (
+        chars: ('g', 't'),
+        frequency: 0.00014999999,
+    ),
+    /*[384]*/ (
+        chars: ('h', 't'),
+        frequency: 0.0013,
+    ),
+    /*[385]*/ (
+        chars: ('i', 't'),
+        frequency: 0.01123,
+    ),
+    /*[386]*/ (
+        chars: ('k', 't'),
+        frequency: 0.000010000001,
+    ),
+    /*[387]*/ (
+        chars: ('l', 't'),
+        frequency: 0.00124,
+    ),
+    /*[388]*/ (
+        chars: ('m', 't'),
+        frequency: 0.000010000001,
+    ),
+    /*[389]*/ (
+        chars: ('n', 't'),
+        frequency: 0.01041,
+    ),
+    /*[390]*/ (
+        chars: ('o', 't'),
+        frequency: 0.00442,
+    ),
+    /*[391]*/ (
+        chars: ('p', 't'),
+        frequency: 0.00106,
+    ),
+    /*[392]*/ (
+        chars: ('r', 't'),
+        frequency: 0.0036199999,
+    ),
+    /*[393]*/ (
+        chars: ('s', 't'),
+        frequency: 0.01053,
+    ),
+    /*[394]*/ (
+        chars: ('t', 't'),
+        frequency: 0.00171,
+    ),
+    /*[395]*/ (
+        chars: ('u', 't'),
+        frequency: 0.00405,
+    ),
+    /*[396]*/ (
+        chars: ('w', 't'),
+        frequency: 0.00007,
+    ),
+    /*[397]*/ (
+        chars: ('x', 't'),
+        frequency: 0.00046999997,
+    ),
+    /*[398]*/ (
+        chars: ('y', 't'),
+        frequency: 0.00017000001,
+    ),
+    /*[399]*/ (
+        chars: ('a', 'u'),
+        frequency: 0.00119,
+    ),
+    /*[400]*/ (
+        chars: ('b', 'u'),
+        frequency: 0.00185,
+    ),
+    /*[401]*/ (
+        chars: ('c', 'u'),
+        frequency: 0.0016300001,
+    ),
+    /*[402]*/ (
+        chars: ('d', 'u'),
+        frequency: 0.00148,
+    ),
+    /*[403]*/ (
+        chars: ('e', 'u'),
+        frequency: 0.00031,
+    ),
+    /*[404]*/ (
+        chars: ('f', 'u'),
+        frequency: 0.00096000003,
+    ),
+    /*[405]*/ (
+        chars: ('g', 'u'),
+        frequency: 0.00086000003,
+    ),
+    /*[406]*/ (
+        chars: ('h', 'u'),
+        frequency: 0.00074,
+    ),
+    /*[407]*/ (
+        chars: ('i', 'u'),
+        frequency: 0.00017000001,
+    ),
+    /*[408]*/ (
+        chars: ('j', 'u'),
+        frequency: 0.00059,
+    ),
+    /*[409]*/ (
+        chars: ('k', 'u'),
+        frequency: 0.000030000001,
+    ),
+    /*[410]*/ (
+        chars: ('l', 'u'),
+        frequency: 0.00135,
+    ),
+    /*[411]*/ (
+        chars: ('m', 'u'),
+        frequency: 0.00115,
+    ),
+    /*[412]*/ (
+        chars: ('n', 'u'),
+        frequency: 0.00079,
+    ),
+    /*[413]*/ (
+        chars: ('o', 'u'),
+        frequency: 0.0087,
+    ),
+    /*[414]*/ (
+        chars: ('p', 'u'),
+        frequency: 0.00105,
+    ),
+    /*[415]*/ (
+        chars: ('q', 'u'),
+        frequency: 0.00148,
+    ),
+    /*[416]*/ (
+        chars: ('r', 'u'),
+        frequency: 0.0012800001,
+    ),
+    /*[417]*/ (
+        chars: ('s', 'u'),
+        frequency: 0.00311,
+    ),
+    /*[418]*/ (
+        chars: ('t', 'u'),
+        frequency: 0.0025499999,
+    ),
+    /*[419]*/ (
+        chars: ('u', 'u'),
+        frequency: 0.000010000001,
+    ),
+    /*[420]*/ (
+        chars: ('v', 'u'),
+        frequency: 0.000020000001,
+    ),
+    /*[421]*/ (
+        chars: ('w', 'u'),
+        frequency: 0.000010000001,
+    ),
+    /*[422]*/ (
+        chars: ('x', 'u'),
+        frequency: 0.00005,
+    ),
+    /*[423]*/ (
+        chars: ('y', 'u'),
+        frequency: 0.000010000001,
+    ),
+    /*[424]*/ (
+        chars: ('z', 'u'),
+        frequency: 0.000020000001,
+    ),
+    /*[425]*/ (
+        chars: ('a', 'v'),
+        frequency: 0.00205,
+    ),
+    /*[426]*/ (
+        chars: ('b', 'v'),
+        frequency: 0.000040000003,
+    ),
+    /*[427]*/ (
+        chars: ('d', 'v'),
+        frequency: 0.00018999999,
+    ),
+    /*[428]*/ (
+        chars: ('e', 'v'),
+        frequency: 0.0025499999,
+    ),
+    /*[429]*/ (
+        chars: ('i', 'v'),
+        frequency: 0.0028799998,
+    ),
+    /*[430]*/ (
+        chars: ('l', 'v'),
+        frequency: 0.00035,
+    ),
+    /*[431]*/ (
+        chars: ('n', 'v'),
+        frequency: 0.00052,
+    ),
+    /*[432]*/ (
+        chars: ('o', 'v'),
+        frequency: 0.00178,
+    ),
+    /*[433]*/ (
+        chars: ('r', 'v'),
+        frequency: 0.00068999996,
+    ),
+    /*[434]*/ (
+        chars: ('s', 'v'),
+        frequency: 0.000010000001,
+    ),
+    /*[435]*/ (
+        chars: ('t', 'v'),
+        frequency: 0.000010000001,
+    ),
+    /*[436]*/ (
+        chars: ('u', 'v'),
+        frequency: 0.000030000001,
+    ),
+    /*[437]*/ (
+        chars: ('x', 'v'),
+        frequency: 0.000020000001,
+    ),
+    /*[438]*/ (
+        chars: ('a', 'w'),
+        frequency: 0.00059999997,
+    ),
+    /*[439]*/ (
+        chars: ('d', 'w'),
+        frequency: 0.000080000005,
+    ),
+    /*[440]*/ (
+        chars: ('e', 'w'),
+        frequency: 0.00117,
+    ),
+    /*[441]*/ (
+        chars: ('g', 'w'),
+        frequency: 0.000010000001,
+    ),
+    /*[442]*/ (
+        chars: ('h', 'w'),
+        frequency: 0.00005,
+    ),
+    /*[443]*/ (
+        chars: ('i', 'w'),
+        frequency: 0.000010000001,
+    ),
+    /*[444]*/ (
+        chars: ('k', 'w'),
+        frequency: 0.000020000001,
+    ),
+    /*[445]*/ (
+        chars: ('l', 'w'),
+        frequency: 0.00013,
+    ),
+    /*[446]*/ (
+        chars: ('m', 'w'),
+        frequency: 0.000010000001,
+    ),
+    /*[447]*/ (
+        chars: ('n', 'w'),
+        frequency: 0.000060000002,
+    ),
+    /*[448]*/ (
+        chars: ('o', 'w'),
+        frequency: 0.0033000002,
+    ),
+    /*[449]*/ (
+        chars: ('p', 'w'),
+        frequency: 0.000010000001,
+    ),
+    /*[450]*/ (
+        chars: ('r', 'w'),
+        frequency: 0.00013,
+    ),
+    /*[451]*/ (
+        chars: ('s', 'w'),
+        frequency: 0.00024000001,
+    ),
+    /*[452]*/ (
+        chars: ('t', 'w'),
+        frequency: 0.00082,
+    ),
+    /*[453]*/ (
+        chars: ('y', 'w'),
+        frequency: 0.000030000001,
+    ),
+    /*[454]*/ (
+        chars: ('a', 'x'),
+        frequency: 0.00018999999,
+    ),
+    /*[455]*/ (
+        chars: ('e', 'x'),
+        frequency: 0.00214,
+    ),
+    /*[456]*/ (
+        chars: ('i', 'x'),
+        frequency: 0.00022,
+    ),
+    /*[457]*/ (
+        chars: ('n', 'x'),
+        frequency: 0.000030000001,
+    ),
+    /*[458]*/ (
+        chars: ('o', 'x'),
+        frequency: 0.00018999999,
+    ),
+    /*[459]*/ (
+        chars: ('r', 'x'),
+        frequency: 0.000010000001,
+    ),
+    /*[460]*/ (
+        chars: ('u', 'x'),
+        frequency: 0.000040000003,
+    ),
+    /*[461]*/ (
+        chars: ('x', 'x'),
+        frequency: 0.000030000001,
+    ),
+    /*[462]*/ (
+        chars: ('a', 'y'),
+        frequency: 0.00217,
+    ),
+    /*[463]*/ (
+        chars: ('b', 'y'),
+        frequency: 0.00176,
+    ),
+    /*[464]*/ (
+        chars: ('c', 'y'),
+        frequency: 0.00042,
+    ),
+    /*[465]*/ (
+        chars: ('d', 'y'),
+        frequency: 0.0005,
+    ),
+    /*[466]*/ (
+        chars: ('e', 'y'),
+        frequency: 0.0014399999,
+    ),
+    /*[467]*/ (
+        chars: ('f', 'y'),
+        frequency: 0.000089999994,
+    ),
+    /*[468]*/ (
+        chars: ('g', 'y'),
+        frequency: 0.00026,
+    ),
+    /*[469]*/ (
+        chars: ('h', 'y'),
+        frequency: 0.0005,
+    ),
+    /*[470]*/ (
+        chars: ('k', 'y'),
+        frequency: 0.000060000002,
+    ),
+    /*[471]*/ (
+        chars: ('l', 'y'),
+        frequency: 0.00425,
+    ),
+    /*[472]*/ (
+        chars: ('m', 'y'),
+        frequency: 0.00062,
+    ),
+    /*[473]*/ (
+        chars: ('n', 'y'),
+        frequency: 0.00098,
+    ),
+    /*[474]*/ (
+        chars: ('o', 'y'),
+        frequency: 0.00035999998,
+    ),
+    /*[475]*/ (
+        chars: ('p', 'y'),
+        frequency: 0.000120000004,
+    ),
+    /*[476]*/ (
+        chars: ('r', 'y'),
+        frequency: 0.00248,
+    ),
+    /*[477]*/ (
+        chars: ('s', 'y'),
+        frequency: 0.00057,
+    ),
+    /*[478]*/ (
+        chars: ('t', 'y'),
+        frequency: 0.00227,
+    ),
+    /*[479]*/ (
+        chars: ('u', 'y'),
+        frequency: 0.00005,
+    ),
+    /*[480]*/ (
+        chars: ('v', 'y'),
+        frequency: 0.00005,
+    ),
+    /*[481]*/ (
+        chars: ('w', 'y'),
+        frequency: 0.000020000001,
+    ),
+    /*[482]*/ (
+        chars: ('x', 'y'),
+        frequency: 0.000030000001,
+    ),
+    /*[483]*/ (
+        chars: ('z', 'y'),
+        frequency: 0.000020000001,
+    ),
+    /*[484]*/ (
+        chars: ('a', 'z'),
+        frequency: 0.000120000004,
+    ),
+    /*[485]*/ (
+        chars: ('c', 'z'),
+        frequency: 0.000010000001,
+    ),
+    /*[486]*/ (
+        chars: ('e', 'z'),
+        frequency: 0.00005,
+    ),
+    /*[487]*/ (
+        chars: ('i', 'z'),
+        frequency: 0.00064000004,
+    ),
+    /*[488]*/ (
+        chars: ('n', 'z'),
+        frequency: 0.000040000003,
+    ),
+    /*[489]*/ (
+        chars: ('o', 'z'),
+        frequency: 0.000030000001,
+    ),
+    /*[490]*/ (
+        chars: ('r', 'z'),
+        frequency: 0.000010000001,
+    ),
+    /*[491]*/ (
+        chars: ('t', 'z'),
+        frequency: 0.000040000003,
+    ),
+    /*[492]*/ (
+        chars: ('u', 'z'),
+        frequency: 0.000020000001,
+    ),
+    /*[493]*/ (
+        chars: ('y', 'z'),
+        frequency: 0.000020000001,
+    ),
+    /*[494]*/ (
+        chars: ('z', 'z'),
+        frequency: 0.000030000001,
+    ),
+]
