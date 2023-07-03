@@ -7,6 +7,8 @@
 mod ngrams;
 pub use ngrams::*;
 
+/// Various utility functions for general use.
+pub mod util;
 /// Support for word generation.
 #[cfg(feature = "words")]
 pub mod words;
