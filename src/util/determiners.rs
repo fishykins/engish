@@ -20,7 +20,7 @@ mod tests {
     #[test]
     fn test_add_article_with_consonant() {
         let noun = "apple";
-        let expected = "a apple";
+        let expected = "an apple";
         let result = add_article(noun);
         assert_eq!(result, expected);
     }

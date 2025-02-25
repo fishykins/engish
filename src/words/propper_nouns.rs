@@ -2,7 +2,7 @@ use crate::VOWLES;
 use crate::{Digraph, Letter, NGramSampler};
 use rand::{rngs::ThreadRng, Rng};
 
-use super::{WordLength, WordBuilder};
+use super::{WordBuilder, WordLength};
 
 /// Constructs propper nouns.
 #[derive(Debug, Clone, Default)]
@@ -27,11 +27,14 @@ impl WordBuilder for NounBuilder {
             WordLength::Chars(i) => i as usize,
             WordLength::Syllables(i) => i as usize,
             WordLength::None => 7,
-        }.max(3);
+        }
+        .max(3);
 
+        // build a new empty char array
         let mut word = Vec::<char>::new();
+
         while word.len() < len {
-            if rng.gen() {
+            if rng.random() {
                 // Use a letter
                 let l = word.len();
                 if l > 0 {
@@ -42,12 +45,16 @@ impl WordBuilder for NounBuilder {
                             word.push(new);
                         }
                     } else {
-                        word.push(self.letters.sample_vowels(rng).into());
+                        let new: char = self.letters.sample_vowels(rng).into();
+                        if new != last {
+                            word.push(new);
+                        }
                     }
                 } else {
                     word.push(self.letters.sample(rng).into());
                 }
             } else {
+                // Use a digraph
                 word.append(&mut self.digraphs.sample(rng).chars.to_vec());
             }
         }
@@ -56,8 +63,6 @@ impl WordBuilder for NounBuilder {
         word[0] = first;
         return word.into_iter().collect();
     }
-
-    
 }
 
 // Tests
@@ -67,7 +72,7 @@ mod tests {
 
     #[test]
     fn propper_noun_test() {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
         let nb = NounBuilder::new();
 
         for i in 0..100 {

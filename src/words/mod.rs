@@ -1,4 +1,4 @@
-use rand::{distributions::WeightedIndex, prelude::Distribution, rngs::ThreadRng};
+use rand::{distr::weighted::WeightedIndex, prelude::Distribution, rngs::ThreadRng};
 
 #[cfg(feature = "nouns")]
 mod propper_nouns;

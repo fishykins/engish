@@ -1,4 +1,4 @@
-use rand::{distributions::WeightedIndex, prelude::Distribution, rngs::ThreadRng};
+use rand::{distr::weighted::WeightedIndex, prelude::Distribution, rngs::ThreadRng};
 use ron::de::from_reader;
 use serde::{Deserialize, Serialize};
 use std::{fmt::Display, fs::File};
@@ -192,7 +192,7 @@ mod tests {
     #[test]
     fn letter_test() {
         let sampler = NGramSampler::<Letter>::default();
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
 
         for _ in 0..100 {
             // 50% chance to print 'a', 25% chance to print 'b', 25% chance to print 'c'
@@ -204,7 +204,7 @@ mod tests {
     #[test]
     fn digram_test() {
         let sampler = NGramSampler::<Digraph>::default();
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
 
         for _ in 0..100 {
             // 50% chance to print 'a', 25% chance to print 'b', 25% chance to print 'c'
