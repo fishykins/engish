@@ -13,5 +13,8 @@ pub mod util;
 #[cfg(feature = "words")]
 pub mod words;
 
+/// A more complex language model.
+pub mod language;
+
 /// The five major vowels in English.
 pub const VOWLES: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
