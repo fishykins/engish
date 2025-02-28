@@ -20,7 +20,6 @@ As with most rust crates, this can be imported to a project using [crates.io](ht
 
 ### Optional features
 * [`words`] - adds functionality for building whole words.
-* [`nouns`] - provides a constructor for propper nouns.
 
 
 ## License
