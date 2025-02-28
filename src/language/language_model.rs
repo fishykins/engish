@@ -5,14 +5,14 @@ use std::fs::File;
 use super::{Letter, LetterGroup};
 
 /// A language model.
-pub struct Language {
+pub struct LanguageModel {
     /// The alphabet of the language.
     pub alphabet: HashMap<char, Letter>,
     /// Collections of letters that are grouped together, such as vowels, consonants, etc.
     pub letter_groups: HashMap<String, LetterGroup>,
 }
 
-impl Language {
+impl LanguageModel {
     /// Checks if the given letter is in the given group.
     pub fn letter_in_group(&self, letter: char, group: &str) -> bool {
         self.letter_groups
@@ -48,7 +48,7 @@ impl Language {
     }
 }
 
-impl Default for Language {
+impl Default for LanguageModel {
     fn default() -> Self {
         let input_path = format!("{}/assets/english_letters.ron", env!("CARGO_MANIFEST_DIR"));
         let f = File::open(&input_path).expect("Failed opening file");
@@ -83,7 +83,7 @@ mod tests {
 
     #[test]
     fn letter_test() {
-        let engish = Language::default();
+        let engish = LanguageModel::default();
         for (letter, data) in engish.alphabet {
             println!("{}: {}", letter, data);
         }

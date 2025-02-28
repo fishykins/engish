@@ -1,5 +1,5 @@
 use super::WordBuilder;
-use crate::language::{Language, LetterSampler};
+use crate::language::{LanguageModel, LetterSampler};
 use rand::prelude::*;
 
 /// Builds nouns.
@@ -9,7 +9,7 @@ pub struct NounBuilderV1 {}
 impl WordBuilder for NounBuilderV1 {
     fn build_length(
         &self,
-        language: &Language,
+        language: &LanguageModel,
         _length: super::WordLength,
         rng: &mut ThreadRng,
     ) -> String {
@@ -59,7 +59,7 @@ mod tests {
     #[test]
     fn propper_noun_test() {
         let mut rng = rand::rng();
-        let language = language::Language::default();
+        let language = language::LanguageModel::default();
         let nb = NounBuilderV1::default();
 
         for i in 0..100 {
