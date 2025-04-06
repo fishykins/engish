@@ -1,4 +1,4 @@
-use super::{Letter, LetterGroup};
+use crate::language::{Letter, LetterGroup};
 use rand::{distr::weighted::WeightedIndex, prelude::Distribution, rngs::ThreadRng};
 use std::collections::HashMap;
 

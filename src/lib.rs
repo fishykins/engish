@@ -6,8 +6,8 @@
 /// Various utility functions for general use.
 pub mod util;
 /// Support for word generation.
-#[cfg(feature = "words")]
-pub mod words;
+#[cfg(feature = "builders")]
+pub mod builders;
 
 /// A collection of tools for building a cutsom language model.
 pub mod language;

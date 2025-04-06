@@ -1,10 +1,12 @@
-mod language_model;
+//! This module contains pure data structures that can be used to reference generic languages. 
+mod language;
 mod letter;
 mod letter_group;
-mod letter_sampler;
+mod noun;
+mod word;
 
-pub use language_model::*;
+pub use language::*;
 pub use letter::*;
 pub use letter_group::*;
-pub use letter_sampler::*;
-
+pub use noun::*;
+pub use word::*;

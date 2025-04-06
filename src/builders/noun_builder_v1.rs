@@ -1,18 +1,18 @@
-use super::WordBuilder;
-use crate::language::{LanguageModel, LetterSampler};
+use super::{WordBuilder, LetterSampler};
+use crate::language::{Language, Noun, WordLength};
 use rand::prelude::*;
 
 /// Builds nouns.
 #[derive(Debug, Clone, Default)]
 pub struct NounBuilderV1 {}
 
-impl WordBuilder for NounBuilderV1 {
+impl WordBuilder<Noun> for NounBuilderV1 {
     fn build_length(
         &self,
-        language: &LanguageModel,
-        _length: super::WordLength,
+        language: &Language,
+        _length: WordLength,
         rng: &mut ThreadRng,
-    ) -> String {
+    ) -> Noun {
         let main_sampler = LetterSampler::new(language.alphabet.clone());
         let mut word = Vec::<char>::new();
         // First, we want to sample the starting letter!
@@ -45,7 +45,7 @@ impl WordBuilder for NounBuilderV1 {
             word.push(next);
         }
 
-        return word.into_iter().collect();
+        return Noun::new(word.into_iter().collect());
     }
 }
 
@@ -59,7 +59,7 @@ mod tests {
     #[test]
     fn propper_noun_test() {
         let mut rng = rand::rng();
-        let language = language::LanguageModel::default();
+        let language = language::Language::default();
         let nb = NounBuilderV1::default();
 
         for i in 0..100 {

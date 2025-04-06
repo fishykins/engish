@@ -11,8 +11,8 @@ repository = "https://github.com/fishykins/engish/"
 license = "MIT OR Apache-2.0"
 
 [features]
-default = ["words"]
-words = []
+default = ["builders"]
+builders = []
 
 [dependencies]
 ron = "0.8"

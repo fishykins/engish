@@ -19,8 +19,8 @@ mod tests {
 
     #[test]
     fn test_add_article_with_consonant() {
-        let noun = "apple";
-        let expected = "an apple";
+        let noun = "pickle";
+        let expected = "a pickle";
         let result = add_article(noun);
         assert_eq!(result, expected);
     }
