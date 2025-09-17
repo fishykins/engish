@@ -1,5 +1,6 @@
-use super::{WordBuilder, LetterSampler};
+use super::WordBuilder;
 use crate::language::{Language, Noun, WordLength};
+use crate::util::LetterSampler;
 use rand::prelude::*;
 
 /// Builds nouns.
@@ -7,20 +8,21 @@ use rand::prelude::*;
 pub struct NounBuilderV1 {}
 
 impl WordBuilder<Noun> for NounBuilderV1 {
-    fn build_length(
-        &self,
-        language: &Language,
-        _length: WordLength,
-        rng: &mut ThreadRng,
-    ) -> Noun {
+    fn build_length(&self, language: &Language, length: WordLength, rng: &mut ThreadRng) -> Noun {
         let main_sampler = LetterSampler::new(language.alphabet.clone());
         let mut word = Vec::<char>::new();
         // First, we want to sample the starting letter!
         let first_letter = main_sampler.sample(rng);
         word.push(first_letter);
 
+        let letter_count = match length {
+            WordLength::Chars(len) => len,
+            WordLength::Syllables(len) => len,
+            WordLength::None => rng.random_range(3..8),
+        };
+
         // five iterations
-        for _ in 0..5 {
+        for _ in 0..letter_count {
             let last = word[word.len() - 1];
             let mut digraph_sampler = LetterSampler::from_digraphs(&language.alphabet[&last]);
 
@@ -31,7 +33,7 @@ impl WordBuilder<Noun> for NounBuilderV1 {
                 let second_last_type = language.letter_type(second_last).unwrap();
 
                 if last_type == second_last_type {
-                    // last two are the same type of letter, lets force it to pick a different type. 
+                    // last two are the same type of letter, lets force it to pick a different type.
                     digraph_sampler.remove_group(language.get_group(&last_type).unwrap());
                 }
 
