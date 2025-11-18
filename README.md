@@ -3,7 +3,7 @@
 
 [![Latest Version]][crates.io] 
 [![docs]][docs.rs]
-[![Minimum Supported Rust Version]][Rust 1.56]
+[![Minimum Supported Rust Version]][Rust]
 
 a collection of geometry and graph based utilities with emphasis on simple code and readability.
 
@@ -19,7 +19,7 @@ Support is provided for simple letter sampling, digraph sampling, word generatio
 As with most rust crates, this can be imported to a project using [crates.io](https://crates.io/crates). Follow the link for more infomation.
 
 ### Optional features
-* [`words`] - adds functionality for building whole words.
+* [`builders`] - adds functionality for word building.
 
 
 ## License
@@ -59,7 +59,7 @@ Project Link: [https://github.com/fishykins/prima](https://github.com/fishykins/
 [Latest Version]: https://img.shields.io/crates/v/engish.svg
 [crates.io]: https://crates.io/crates/engish/
 [Minimum Supported Rust Version]: https://img.shields.io/badge/Rust-1.56.0-blue?color=fc8d62&logo=rust
-[Rust 1.56]: https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1560-2021-10-21
+[Rust]: https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1560-2021-10-21
 [Code of Conduct]: https://www.rust-lang.org/en-US/conduct.html
 [docs]: "https://img.shields.io/docsrs/engish/"
 [docs.rs]: "https://docs.rs/prima/latest/engish/"
