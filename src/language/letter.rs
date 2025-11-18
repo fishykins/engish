@@ -8,27 +8,17 @@ pub struct Letter {
     pub frequency: f32,
     /// Any digraphs that start with this letter.
     pub digraphs: Vec<DigraphPair>,
-    /// Any rules that apply to this letter.
-    #[serde(default)]
-    pub rules: Vec<LetterRule>,
 }
 
 impl Display for Letter {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         let digraph_string = self.digraphs.iter().map(|d| d.letter).collect::<String>();
-        if self.rules.is_empty() {
-            return write!(
-                f,
-                "frequency: {}, digraphs: {}",
-                self.frequency, digraph_string
-            );
-        } else {
-            write!(
-                f,
-                "frequency: {}, digraphs: {:?}, rules: {:?}",
-                self.frequency, digraph_string, self.rules
-            )
-        }
+
+        return write!(
+            f,
+            "frequency: {}, digraphs: {}",
+            self.frequency, digraph_string
+        );
     }
 }
 

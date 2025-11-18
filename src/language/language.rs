@@ -1,10 +1,12 @@
 use ron::de::from_reader;
+use lazy_static::lazy_static;
 use std::collections::HashMap;
 use std::fs::File;
 
 use super::{Letter, LetterGroup};
 
 /// A language model containing all the meta data regarding alphabets, letter groups and other low-level language defining traits. 
+#[derive(Debug, Clone)]
 pub struct Language {
     /// The alphabet of the language.
     pub alphabet: HashMap<char, Letter>,
@@ -14,25 +16,50 @@ pub struct Language {
 
 impl Language {
     /// Checks if the given letter is in the given group.
-    pub fn letter_in_group(&self, letter: char, group: &str) -> bool {
+    pub fn letter_in_group<S: AsRef<str>>(&self, letter: char, group: S) -> bool {
         self.letter_groups
-            .get(group)
+            .get(group.as_ref())
             .map(|g| g.letters.contains(&letter))
             .unwrap_or(false)
     }
 
+    /// Converts a `char` into a paired data block. 
+    pub fn get_letter_pair(&self, letter: char) -> Option<(char, &Letter)> {
+        if let Some(letter_data) = self.alphabet.get(&letter) {
+            return Some((letter, letter_data));
+        }
+        None
+    }
+
+    /// Converts a `char` into a paired data block. Panics if not found!
+    /// Useful for working with samplers.
+    pub fn get_letter_pair_unchecked(&self, letter: char) -> (char, &Letter) {
+        if let Some(letter_data) = self.alphabet.get(&letter) {
+            return (letter, letter_data);
+        }
+        panic!("Letter not found in alphabet: {}", letter)
+    }
+
     
-    /// Returns the letter group this letter belongs to.
-    pub fn letter_type(&self, letter: char) -> Option<String> {
+    /// Returns the letter group type this letter belongs to.
+    pub fn letter_type(&self, letter: char) -> Option<&str> {
         self.letter_groups
             .iter()
-            .find_map(|(group, g)| g.letters.contains(&letter).then_some(group.clone()))
+            .find_map(|(group, g)| g.letters.contains(&letter).then_some(group.as_str()))
     }
+
+    /// Returns the `LetterGroup` for the given `char`, if found.
+    pub fn letter_group(&self, letter: char) -> Option<&LetterGroup> {
+        self.letter_groups
+            .iter()
+            .find_map(|(_, g)| g.letters.contains(&letter).then_some(g))
+    }
+
 
     /// Gets the group name of the given letter. 
     /// TODO: handle conditions where it might be in multiple groups. This could be the case with theoretical language models.
-    pub fn get_group(&self, group: &str) -> Option<LetterGroup> {
-        self.letter_groups.get(group).cloned()
+    pub fn get_group<S: AsRef<str>>(&self, group: S) -> Option<&LetterGroup> {
+        self.letter_groups.get(group.as_ref())
     }
 
     /// A quick helper function to check if the given letter is a vowel, as defined by the language.
@@ -48,29 +75,26 @@ impl Language {
     }
 }
 
-impl Default for Language {
-    fn default() -> Self {
-        let input_path = format!("{}/assets/english_letters.ron", env!("CARGO_MANIFEST_DIR"));
-        let f = File::open(&input_path).expect("Failed opening file");
-        let alphabet: HashMap<char, Letter> = match from_reader(f) {
-            Ok(x) => x,
-            Err(e) => {
-                panic!("Failed to load config: {}", e);
-            }
-        };
-        let input_path = format!("{}/assets/english_letter_groups.ron", env!("CARGO_MANIFEST_DIR"));
-        let f = File::open(&input_path).expect("Failed opening file");
-        let letter_groups: HashMap<String, LetterGroup> = match from_reader(f) {
-            Ok(x) => x,
-            Err(e) => {
-                panic!("Failed to load config: {}", e);
-            }
-        };
+lazy_static! {
+    static ref DEFAULT_LANGUAGE: Language = {
+        let letters_path = format!("{}/assets/english_letters.ron", env!("CARGO_MANIFEST_DIR"));
+        let f_letters = File::open(&letters_path).expect("Failed opening english_letters.ron");
+        let alphabet: HashMap<char, Letter> = from_reader(f_letters).expect("Failed to parse english_letters.ron");
 
-        Self {
+        let groups_path = format!("{}/assets/english_letter_groups.ron", env!("CARGO_MANIFEST_DIR"));
+        let f_groups = File::open(&groups_path).expect("Failed opening english_letter_groups.ron");
+        let letter_groups: HashMap<String, LetterGroup> = from_reader(f_groups).expect("Failed to parse english_letter_groups.ron");
+
+        Language {
             alphabet,
             letter_groups,
         }
+    };
+}
+
+impl Default for Language {
+    fn default() -> Self {
+        DEFAULT_LANGUAGE.clone()
     }
 }
 

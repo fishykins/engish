@@ -1,5 +1,5 @@
 use crate::language::{Letter, LetterGroup};
-use rand::{distr::weighted::WeightedIndex, prelude::Distribution, rngs::ThreadRng};
+use rand::{distr::weighted::WeightedIndex, prelude::Distribution};
 use std::collections::HashMap;
 
 /// A neat little struct to quickly sample letters based on frequency.
@@ -13,11 +13,11 @@ pub struct LetterSampler {
 
 impl LetterSampler {
     /// Makes a new letter sampler from the given HashMap.
-    pub fn new(alphabet: HashMap<char, Letter>) -> Self {
-        let base_weights: Vec<f32> = alphabet.iter().map(|(_, l)| l.frequency).collect();
+    pub fn new(alphabet: &HashMap<char, Letter>) -> Self {
+        let (alphabet_chars, base_weights): (Vec<char>, Vec<f32>) =
+            alphabet.iter().map(|(c, l)| (*c, l.frequency)).unzip();
         let weights = WeightedIndex::new(&base_weights).unwrap();
-        let alphabet: Vec<char> = alphabet.keys().cloned().collect();
-        Self { alphabet, weights }
+        Self { alphabet: alphabet_chars, weights }
     }
 
     /// Makes a new letter sampler from the given letter's potential digraphs.
@@ -30,12 +30,30 @@ impl LetterSampler {
     }
 
     /// Takes a random value using a weighted frequency.
-    pub fn sample(&self, rng: &mut ThreadRng) -> char {
+    pub fn sample(&self, rng: &mut impl rand::Rng) -> char {
         self.alphabet[self.weights.sample(rng)]
     }
 
+    /// Introduces a list of letters with their frequencies to the sampler.
+    pub fn add_letters_with_freq(&mut self, letters: Vec<(char, &Letter)>) {
+        let mut current_weights: Vec<f32> = self
+            .weights
+            .weights()
+            .into_iter()
+            .map(|w| w)
+            .collect();
+
+        for (char, letter_data) in letters {
+            if !self.alphabet.contains(&char) {
+                self.alphabet.push(char);
+                current_weights.push(letter_data.frequency);
+            }
+        }
+        self.weights = WeightedIndex::new(&current_weights).unwrap();
+    }
+
     /// Filters out any letters in the given group from this sampler.
-    pub fn remove_group(&mut self, group: LetterGroup) {
+    pub fn remove_group(&mut self, group: &LetterGroup) {
         let mut new_alphabet = Vec::new();
         let mut new_weights = Vec::new();
         for (i, letter) in self.alphabet.iter().enumerate() {
@@ -48,7 +66,6 @@ impl LetterSampler {
         self.weights = WeightedIndex::new(&new_weights).unwrap();
     }
 
-
     /// Removes the given letter from this sampler.
     pub fn remove_char(&mut self, letter: char) {
         let mut new_alphabet = Vec::new();
@@ -59,7 +76,7 @@ impl LetterSampler {
                 new_weights.push(self.weights.weight(i).unwrap());
             }
         }
-        self.alphabet = new_alphabet;    
+        self.alphabet = new_alphabet;
         self.weights = WeightedIndex::new(&new_weights).unwrap();
     }
 }
