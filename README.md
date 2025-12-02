@@ -5,7 +5,7 @@
 [![docs]][docs.rs]
 [![Minimum Supported Rust Version]][Rust]
 
-A stringly opinionated crate that supports messing around with language (in ways you probably shouldn't). 
+A strongly opinionated crate that supports messing around with language (in ways you probably shouldn't). 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project

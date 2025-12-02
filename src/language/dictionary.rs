@@ -156,7 +156,7 @@ mod tests {
     fn dictionary_test() {
         let mut dict = Dictionary::new();
         dict.add_word(Noun::new_proper("bilbo"));
-        dict.add_word(Noun::new_common("ring", Some("rings")));
+        dict.add_word(Noun::new_common("ring"));
 
         let nouns = dict.get_words::<Noun>();
         assert_eq!(nouns.len(), 2);
@@ -172,8 +172,8 @@ mod tests {
     fn dictionary_filter_test() {
         let mut dict = Dictionary::new();
         dict.add_word(Noun::new_proper("bilbo"));
-        dict.add_word(Noun::new_common("ring", Some("rings")));
-        dict.add_word(Noun::new_collective("fellowship", None));
+        dict.add_word(Noun::new_common("ring"));
+        dict.add_word(Noun::new_collective("fellowship"));
 
         let common_nouns = dict.get_words_filtered::<Noun, _>(|n| n.is_common());
         assert_eq!(common_nouns.len(), 1);
@@ -192,7 +192,7 @@ mod tests {
     fn dictionary_random_choice_test() {
         let mut dict = Dictionary::new();
         dict.add_word(Noun::new_proper("Aragorn"));
-        dict.add_word(Noun::new_common("king", Some("kings")));
+        dict.add_word(Noun::new_common("king"));
         dict.add_word(Verb::new_regular("walk"));
 
         let mut rng = rand::rng();

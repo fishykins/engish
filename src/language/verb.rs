@@ -6,7 +6,12 @@ use super::Word;
 
 /// Represents a verb, which describes an action or state.
 #[derive(Clone, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub enum Verb {
+pub struct Verb(VerbData);
+
+/// Internal representation of a verb.
+#[derive(Clone, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[serde(rename = "Verb")] // Ensure serialization format is stable
+enum VerbData {
     /// A regular verb that follows standard conjugation rules.
     /// Other forms are generated dynamically from the infinitive.
     Regular {
@@ -45,13 +50,14 @@ impl Verb {
         past_participle: S,
         present_participle: S,
     ) -> Self {
-        Self::Irregular {
+        let kind = VerbData::Irregular {
             infinitive: infinitive.into(),
             present_singular: present_singular.into(),
             past: past.into(),
             past_participle: past_participle.into(),
             present_participle: present_participle.into(),
-        }
+        };
+        Self(kind)
     }
 
     /// Creates a new regular verb from its infinitive form.
@@ -68,16 +74,17 @@ impl Verb {
     /// assert_eq!(verb.present_participle(), "walking");
     /// ```
     pub fn new_regular<S: Into<String>>(infinitive: S) -> Self {
-        Self::Regular {
+        let kind = VerbData::Regular {
             infinitive: infinitive.into(),
-        }
+        };
+        Self(kind)
     }
 
     /// Returns the present tense, third-person singular form.
     pub fn present_singular<'a>(&'a self) -> Cow<'a, str> {
-        match self {
-            Verb::Regular { infinitive } => format!("{}s", infinitive).into(),
-            Verb::Irregular {
+        match &self.0 {
+            VerbData::Regular { infinitive } => format!("{}s", infinitive).into(),
+            VerbData::Irregular {
                 present_singular, ..
             } => present_singular.as_str().into(),
         }
@@ -85,17 +92,17 @@ impl Verb {
 
     /// Returns the past tense form.
     pub fn past<'a>(&'a self) -> Cow<'a, str> {
-        match self {
-            Verb::Regular { infinitive } => format!("{}ed", infinitive).into(),
-            Verb::Irregular { past, .. } => past.as_str().into(),
+        match &self.0 {
+            VerbData::Regular { infinitive } => format!("{}ed", infinitive).into(),
+            VerbData::Irregular { past, .. } => past.as_str().into(),
         }
     }
 
     /// Returns the past participle form.
     pub fn past_participle<'a>(&'a self) -> Cow<'a, str> {
-        match self {
-            Verb::Regular { infinitive } => format!("{}ed", infinitive).into(),
-            Verb::Irregular {
+        match &self.0 {
+            VerbData::Regular { infinitive } => format!("{}ed", infinitive).into(),
+            VerbData::Irregular {
                 past_participle, ..
             } => past_participle.as_str().into(),
         }
@@ -103,9 +110,9 @@ impl Verb {
 
     /// Returns the present participle form (gerund).
     pub fn present_participle<'a>(&'a self) -> Cow<'a, str> {
-        match self {
-            Verb::Regular { infinitive } => format!("{}ing", infinitive).into(),
-            Verb::Irregular {
+        match &self.0 {
+            VerbData::Regular { infinitive } => format!("{}ing", infinitive).into(),
+            VerbData::Irregular {
                 present_participle, ..
             } => present_participle.as_str().into(),
         }
@@ -115,9 +122,9 @@ impl Verb {
 impl AsRef<str> for Verb {
     /// Returns the infinitive form of the verb.
     fn as_ref(&self) -> &str {
-        match self {
-            Verb::Regular { infinitive } => infinitive,
-            Verb::Irregular { infinitive, .. } => infinitive,
+        match &self.0 {
+            VerbData::Regular { infinitive } => infinitive,
+            VerbData::Irregular { infinitive, .. } => infinitive,
         }
     }
 }
@@ -125,21 +132,21 @@ impl AsRef<str> for Verb {
 impl Display for Verb {
     /// Displays the infinitive form of the verb.
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        match self {
-            Verb::Regular { infinitive } => write!(f, "{}", infinitive),
-            Verb::Irregular { infinitive, .. } => write!(f, "{}", infinitive),
+        match &self.0 {
+            VerbData::Regular { infinitive } => write!(f, "{}", infinitive),
+            VerbData::Irregular { infinitive, .. } => write!(f, "{}", infinitive),
         }
     }
 }
 
 impl Debug for Verb {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        match self {
-            Self::Regular { infinitive } => f
+        match &self.0 {
+            VerbData::Regular { infinitive } => f
                 .debug_struct("Regular")
                 .field("infinitive", infinitive)
                 .finish(),
-            Self::Irregular {
+            VerbData::Irregular {
                 infinitive,
                 present_singular,
                 past,
