@@ -47,16 +47,46 @@ impl Adjective {
 
     /// Returns the comparative form of the adjective (e.g., "faster", "better").
     pub fn comparative<'a>(&'a self) -> Cow<'a, str> {
+        fn is_vowel(c: char) -> bool {
+            matches!(c, 'a' | 'e' | 'i' | 'o' | 'u' | 'h')
+        }
+
         match &self.0 {
-            AdjectiveData::Regular { base } => format!("{}er", base).into(),
+            AdjectiveData::Regular { base } => {
+                if base.ends_with('e') {
+                    return format!("{}r", base).into();
+                }
+                if let Some(stem) = base.strip_suffix('y') {
+                    // For single-syllable words like "shy", the stem is not empty.
+                    // If the stem is empty (e.g. word is just "y"), we'd fall through.
+                    // The main check is for multi-character words where 'y' is preceded by a consonant.
+                    if let Some(before_y) = stem.chars().last() {
+                        if !is_vowel(before_y) {
+                            return format!("{}ier", stem).into();
+                        }
+                    }
+                }
+                if crate::language::utils::ends_cvc(base) {
+                    if let Some(last) = base.chars().last() {
+                        return format!("{}{}er", base, last).into();
+                    }
+                }
+                format!("{}er", base).into()
+            }
             AdjectiveData::Irregular { comparative, .. } => comparative.as_str().into(),
         }
     }
 
     /// Returns the superlative form of the adjective (e.g., "fastest", "best").
     pub fn superlative<'a>(&'a self) -> Cow<'a, str> {
+        // Superlative forms follow the same spelling rules as comparative,
+        // but with an "-est" suffix. We can derive it from the comparative form.
         match &self.0 {
-            AdjectiveData::Regular { base } => format!("{}est", base).into(),
+            AdjectiveData::Regular { .. } => {
+                let comparative = self.comparative();
+                let stem = comparative.strip_suffix("er").unwrap_or(&comparative);
+                format!("{}est", stem).into()
+            }
             AdjectiveData::Irregular { superlative, .. } => superlative.as_str().into(),
         }
     }
@@ -83,8 +113,46 @@ mod tests {
         assert_eq!(regular_adj.comparative(), "quicker");
         assert_eq!(regular_adj.superlative(), "quickest");
 
+        // Test -e rule
+        let large_adj = Adjective::new_regular("large");
+        assert_eq!(large_adj.comparative(), "larger");
+        assert_eq!(large_adj.superlative(), "largest");
+
+        // Test -y rule
+        let happy_adj = Adjective::new_regular("happy");
+        assert_eq!(happy_adj.comparative(), "happier");
+        assert_eq!(happy_adj.superlative(), "happiest");
+
+        // Test CVC rule
+        let big_adj = Adjective::new_regular("big");
+        assert_eq!(big_adj.comparative(), "bigger");
+        assert_eq!(big_adj.superlative(), "biggest");
+
         let irregular_adj = Adjective::new_irregular("good", "better", "best");
         assert_eq!(irregular_adj.comparative(), "better");
         assert_eq!(irregular_adj.superlative(), "best");
+    }
+
+    #[test]
+    fn adjective_edge_case_test() {
+        // Test -y with preceding vowel (should not become -ier)
+        let grey_adj = Adjective::new_regular("grey");
+        assert_eq!(grey_adj.comparative(), "greyer");
+        assert_eq!(grey_adj.superlative(), "greyest");
+
+        // Test single-syllable -y
+        let shy_adj = Adjective::new_regular("shy");
+        assert_eq!(shy_adj.comparative(), "shyer");
+        assert_eq!(shy_adj.superlative(), "shyest");
+
+        // Test CVC rule exception (ends in 'w')
+        let slow_adj = Adjective::new_regular("slow");
+        assert_eq!(slow_adj.comparative(), "slower");
+        assert_eq!(slow_adj.superlative(), "slowest");
+
+        // Test another CVC case
+        let thin_adj = Adjective::new_regular("thin");
+        assert_eq!(thin_adj.comparative(), "thinner");
+        assert_eq!(thin_adj.superlative(), "thinnest");
     }
 }

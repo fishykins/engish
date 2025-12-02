@@ -24,6 +24,14 @@ impl Dictionary {
         entry.push(Box::new(word));
     }
 
+    /// Adds multiple words to the dictionary.
+    /// The words must implement the `Word` trait and be 'static.
+    pub fn add_words<T: Word + 'static>(&mut self, words: Vec<T>) {
+        let type_id = TypeId::of::<T>();
+        let entry = self.words.entry(type_id).or_default();
+        entry.extend(words.into_iter().map(|word| Box::new(word) as Box<dyn Any>));
+    }
+
     /// Retrieves all words of a specific type.
     ///
     /// # Example

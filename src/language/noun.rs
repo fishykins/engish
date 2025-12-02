@@ -24,7 +24,43 @@ impl Pluralization {
         match self {
             Self::None => Cow::Borrowed(singular),
             Self::Irregular(plural) => Cow::Borrowed(plural),
-            Self::Regular => Cow::Owned(format!("{}s", singular)),
+            Self::Regular => {
+                // Rule: If the word ends in s, x, z, ch, or sh, add "es".
+                if singular.ends_with('s')
+                    || singular.ends_with('x')
+                    || singular.ends_with('z')
+                    || singular.ends_with("ch")
+                    || singular.ends_with("sh")
+                {
+                    return Cow::Owned(format!("{}es", singular));
+                }
+
+                // Rule: If the word ends in 'f' or 'fe', change to 'ves'.
+                // Note: This has exceptions (e.g., roof, chef) but is a common rule.
+                if let Some(stem) = singular.strip_suffix("fe") {
+                    return Cow::Owned(format!("{}ves", stem));
+                }
+                if let Some(stem) = singular.strip_suffix('f') {
+                    return Cow::Owned(format!("{}ves", stem));
+                }
+
+
+                if let Some(char_before_y) = singular.strip_suffix('y') {
+                    // It ends in 'y'. Now check the character before it.
+                    if let Some(last_char) = char_before_y.chars().last() {
+                        // This is a simple vowel check. For a more robust system,
+                        // this could use the `Language` model.
+                        let is_vowel = matches!(last_char, 'a' | 'e' | 'i' | 'o' | 'u');
+                        if !is_vowel {
+                            // Consonant + y -> -ies
+                            return Cow::Owned(format!("{}ies", char_before_y));
+                        }
+                    }
+                }
+
+                // Default regular pluralization, including vowel + y.
+                Cow::Owned(format!("{}s", singular))
+            }
         }
     }
 }
@@ -262,5 +298,22 @@ mod tests {
         );
         assert_eq!(Noun::new_collective("Fellowship").as_ref(), "fellowship");
         assert_eq!(Noun::new_common_uncountable("WATER").as_ref(), "water");
+    }
+
+    #[test]
+    fn noun_pluralization_test() {
+        assert_eq!(Noun::new_collective("company").plural(), "companies");
+        assert_eq!(Noun::new_common("boy").plural(), "boys");
+        assert_eq!(Noun::new_common("bus").plural(), "buses");
+        assert_eq!(Noun::new_common("box").plural(), "boxes");
+        assert_eq!(Noun::new_common("buzz").plural(), "buzzes");
+        assert_eq!(Noun::new_common("watch").plural(), "watches");
+        assert_eq!(Noun::new_common("dish").plural(), "dishes");
+        assert_eq!(Noun::new_common("cat").plural(), "cats");
+        assert_eq!(Noun::new_common("leaf").plural(), "leaves");
+        assert_eq!(Noun::new_common("wolf").plural(), "wolves");
+        assert_eq!(Noun::new_common("life").plural(), "lives");
+        assert_eq!(Noun::new_common("knife").plural(), "knives");
+        assert_eq!(Noun::new_common("dwarf").plural(), "dwarves");
     }
 }
