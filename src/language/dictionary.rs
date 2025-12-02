@@ -79,7 +79,7 @@ impl Dictionary {
     /// # use engish::language::{Dictionary, Noun};
     /// let mut dict = Dictionary::new();
     /// dict.add_word(Noun::new_proper("Gandalf"));
-    /// dict.add_word(Noun::new_common("wizard", None));
+    /// dict.add_word(Noun::new_common("wizard"));
     ///
     /// // Get only the proper nouns
     /// let proper_nouns = dict.get_words_filtered::<Noun, _>(|n| n.is_proper());

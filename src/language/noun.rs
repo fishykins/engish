@@ -111,7 +111,7 @@ impl Noun {
     }
 
     /// Creates a new common noun that is uncounatable.
-    pub fn new_uncountable<S: Into<String>>(singular: S) -> Self {
+    pub fn new_common_uncountable<S: Into<String>>(singular: S) -> Self {
         Self(NounData::Common {
             singular: singular.into().to_lowercase(),
             plural: Pluralization::None,
@@ -231,7 +231,7 @@ mod tests {
         assert!(countable_noun.is_countable());
 
         // Uncountable noun
-        let uncountable_noun = Noun::new_uncountable("water");
+        let uncountable_noun = Noun::new_common_uncountable("water");
         assert_eq!(uncountable_noun.as_ref(), "water");
         assert_eq!(uncountable_noun.plural(), "water"); // Plural returns singular
         assert!(!uncountable_noun.is_countable());
@@ -249,7 +249,7 @@ mod tests {
     fn noun_type_flags_test() {
         assert!(Noun::new_proper("Gandalf").is_proper());
         assert!(!Noun::new_proper("Gandalf").is_common());
-        assert!(Noun::new_uncountable("wizard").is_common());
+        assert!(Noun::new_common_uncountable("wizard").is_common());
         assert!(Noun::new_collective("fellowship").is_collective());
     }
 
@@ -261,6 +261,6 @@ mod tests {
             "wizards"
         );
         assert_eq!(Noun::new_collective("Fellowship").as_ref(), "fellowship");
-        assert_eq!(Noun::new_uncountable("WATER").as_ref(), "water");
+        assert_eq!(Noun::new_common_uncountable("WATER").as_ref(), "water");
     }
 }

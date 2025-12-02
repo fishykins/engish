@@ -68,8 +68,8 @@ impl Verb {
     /// ```
     /// # use engish::language::Verb;
     /// let verb = Verb::new_regular("walk");
-    /// assert_eq!(verb.present_singular, "walks");
-    /// assert_eq!(verb.past, "walked");
+    /// assert_eq!(verb.present_singular(), "walks");
+    /// assert_eq!(verb.past(), "walked");
     /// assert_eq!(verb.past_participle(), "walked");
     /// assert_eq!(verb.present_participle(), "walking");
     /// ```
