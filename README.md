@@ -5,13 +5,13 @@
 [![docs]][docs.rs]
 [![Minimum Supported Rust Version]][Rust]
 
-a collection of geometry and graph based utilities with emphasis on simple code and readability.
+A stringly opinionated crate that supports messing around with language (in ways you probably shouldn't). 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is a collection of utilities to help you generate new and exciting words that vaguely resemble the English language.
-Support is provided for simple letter sampling, digraph sampling, word generation and much more. No more will you need to import a list of names into your project- simply generate a new one on the fly!
+This project serves two purposes- easy handling of words within the framework of a language and word generation. The majority of the given 
+frameworks apply predominantly to the English language but can be adapted for others.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -49,7 +49,7 @@ dual licensed as above, without any additional terms or conditions.
 
 Caspar Green - caspar.m.green@gmail.com
 
-Project Link: [https://github.com/fishykins/prima](https://github.com/fishykins/engish)
+Project Link: [https://github.com/fishykins/engish](https://github.com/fishykins/engish)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
