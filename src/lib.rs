@@ -14,3 +14,11 @@ pub mod language;
 
 /// The five major vowels in English.
 pub const VOWLES: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
+
+/// A collection of the most useful features.
+pub mod prelude {
+    pub use crate::language::{Dictionary, Language, Noun,  Verb, Adjective, Word, WordLength};
+    pub use crate::util::add_article;
+    #[cfg(feature = "builders")]
+    pub use crate::builders::{WordBuilder, PropperNounBuilder};
+}

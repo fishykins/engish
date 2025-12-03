@@ -10,13 +10,45 @@ A strongly opinionated crate that supports messing around with language (in ways
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project serves two purposes- easy handling of words within the framework of a language and word generation. The majority of the given 
-frameworks apply predominantly to the English language but can be adapted for others.
+This project provides functionality for procedurally building pseudo words, as well as basic dictionary sampling.
+Nouns, Verbs and Adjectives are defined and constructable, with grammatical rules available for changing tense, pluralizing etc.
+Due to the nature of "rules" and the English language, you should not use this for anything that falls outside the remit of "silly". 
+
+The only data that comes with this crate is for letter frequencies- if you want to build a dictionary then you need to provide your own data sets. 
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 As with most rust crates, this can be imported to a project using [crates.io](https://crates.io/crates). Follow the link for more infomation.
+
+## Usage
+
+First, add `engish` to your `Cargo.toml`. To use the word builders, you'll need to enable the `builders` feature.
+
+```toml
+[dependencies]
+engish = { version = "0.3", features = ["builders"] }
+```
+*(Note: check [crates.io] for the latest version number.)*
+
+Here is an example of how to generate a pseudo-word using the `PropperNounBuilder`:
+
+```rust
+use engish::prelude::*;
+
+fn main() {
+    // Build a new 'propper' noun with a length between 5 and 10 characters.
+    let noun = PropperNounBuilder::new()
+        .with_min_length(5)
+        .with_max_length(10)
+        .build()
+        .unwrap();
+
+    println!("Generated proper noun: {}", noun);
+}
+```
 
 ### Optional features
 * [`builders`] - adds functionality for word building.
