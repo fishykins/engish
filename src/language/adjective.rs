@@ -26,6 +26,9 @@ enum AdjectiveData {
         /// The superlative form (e.g., "best").
         superlative: String,
     },
+    Absolute {
+        base: String,
+    },
 }
 
 impl Adjective {
@@ -43,6 +46,16 @@ impl Adjective {
             comparative: comparative.into(),
             superlative: superlative.into(),
         })
+    }
+
+    /// Creates a new absolute adjective, providing all its forms.
+    pub fn new_absolute<S: Into<String>>(base: S) -> Self {
+        Adjective(AdjectiveData::Absolute { base: base.into() })
+    }
+
+    /// Returns `true` if the adjective is absolute.
+    pub fn is_absolute(&self) -> bool {
+        matches!(&self.0, AdjectiveData::Absolute { .. })
     }
 
     /// Returns the comparative form of the adjective (e.g., "faster", "better").
@@ -74,6 +87,7 @@ impl Adjective {
                 format!("{}er", base).into()
             }
             AdjectiveData::Irregular { comparative, .. } => comparative.as_str().into(),
+            AdjectiveData::Absolute { base } => base.as_str().into(),
         }
     }
 
@@ -88,6 +102,7 @@ impl Adjective {
                 format!("{}est", stem).into()
             }
             AdjectiveData::Irregular { superlative, .. } => superlative.as_str().into(),
+            AdjectiveData::Absolute { base } => base.as_str().into(),
         }
     }
 }
@@ -97,6 +112,17 @@ impl AsRef<str> for Adjective {
         match &self.0 {
             AdjectiveData::Regular { base } => base,
             AdjectiveData::Irregular { base, .. } => base,
+            AdjectiveData::Absolute { base } => base,
+        }
+    }
+}
+
+impl std::fmt::Display for Adjective {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.0 {
+            AdjectiveData::Regular { base } => write!(f, "{}", base),
+            AdjectiveData::Irregular { base, .. } => write!(f, "{}", base),
+            AdjectiveData::Absolute { base } => write!(f, "{}", base),
         }
     }
 }
