@@ -1,6 +1,6 @@
 [package]
 name = "engish"
-version = "0.3.6"
+version = "0.3.7"
 edition = "2021"
 description = "A language utility for sampling and building words."
 keywords = ["language", "words", "english"]

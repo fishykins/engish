@@ -1,5 +1,3 @@
-use crate::language::Noun;
-
 /// Determines a words length, either in raw characters or syllables.
 #[derive(Debug, Clone, Default)]
 pub enum WordLength {
@@ -13,7 +11,7 @@ pub enum WordLength {
 }
 
 /// A word!
-pub trait Word: AsRef<str> {
+pub trait Word: AsRef<str> + Clone{
     /// Make the first letter a capital letter. 
     fn capitalize(&self) -> String {
         let s = self.as_ref();
@@ -25,6 +23,22 @@ pub trait Word: AsRef<str> {
     }
 }
 
-impl Word for String {}
-impl Word for &str {}
-impl Word for Noun {}
+impl Word for &'static str {
+    fn capitalize(&self) -> String {
+        let mut c = self.chars();
+        match c.next() {
+            Some(first) => first.to_uppercase().collect::<String>() + c.as_str(),
+            None => String::new(),
+        }
+    }
+}
+
+impl Word for String {
+    fn capitalize(&self) -> String {
+        let mut c = self.chars();
+        match c.next() {
+            Some(first) => first.to_uppercase().collect::<String>() + c.as_str(),
+            None => String::new(),
+        }
+    }
+}

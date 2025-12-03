@@ -1,6 +1,5 @@
 //! This module contains pure data structures that can be used to reference generic languages.
 mod adjective;
-mod any_word;
 mod dictionary;
 mod language;
 mod letter;

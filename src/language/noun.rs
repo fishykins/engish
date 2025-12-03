@@ -69,6 +69,8 @@ impl Pluralization {
 #[derive(Clone, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Noun(NounData);
 
+impl Word for Noun {}
+
 /// Internal representation of a Noun.
 #[derive(Clone, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[serde(rename = "Noun")]
@@ -238,6 +240,7 @@ impl From<&str> for Noun {
         Self::new_proper(s)
     }
 }
+
 
 // Tests
 #[cfg(test)]
