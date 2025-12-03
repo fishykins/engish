@@ -101,6 +101,7 @@ impl Verb {
                     || infinitive.ends_with("ch")
                     || infinitive.ends_with('x')
                     || infinitive.ends_with('z')
+                    || infinitive.ends_with('o')
                 {
                     return format!("{}es", infinitive).into();
                 }
@@ -132,7 +133,7 @@ impl Verb {
                         }
                     }
                 }
-                if crate::language::utils::ends_cvc(infinitive) {
+                if !infinitive.ends_with("en") && crate::language::utils::ends_cvc(infinitive) {
                     if let Some(last) = infinitive.chars().last() {
                         return format!("{}{}ed", infinitive, last).into();
                     }
@@ -167,7 +168,7 @@ impl Verb {
                 if infinitive.ends_with('e') {
                     return format!("{}ing", &infinitive[..infinitive.len() - 1]).into();
                 }
-                if crate::language::utils::ends_cvc(infinitive) {
+                if !infinitive.ends_with("en") && crate::language::utils::ends_cvc(infinitive) {
                     if let Some(last) = infinitive.chars().last() {
                         return format!("{}{}ing", infinitive, last).into();
                     }
