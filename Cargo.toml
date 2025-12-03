@@ -1,8 +1,8 @@
 [package]
 name = "engish"
-version = "0.3.5"
+version = "0.3.6"
 edition = "2021"
-description = "A language utility for sampling letters and building words."
+description = "A language utility for sampling and building words."
 keywords = ["language", "words", "english"]
 categories = ["text-processing"]
 authors = ["Fishy"]

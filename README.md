@@ -41,10 +41,7 @@ use engish::prelude::*;
 fn main() {
     // Build a new 'propper' noun with a length between 5 and 10 characters.
     let noun = PropperNounBuilder::new()
-        .with_min_length(5)
-        .with_max_length(10)
-        .build()
-        .unwrap();
+        .build();
 
     println!("Generated proper noun: {}", noun);
 }
