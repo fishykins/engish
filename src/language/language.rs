@@ -1,17 +1,17 @@
-use ron::de::from_reader;
 use lazy_static::lazy_static;
-use std::collections::HashMap;
+use ron::de::from_reader;
+use std::collections::BTreeMap;
 use std::fs::File;
 
 use super::{Letter, LetterGroup};
 
-/// A language model containing all the meta data regarding alphabets, letter groups and other low-level language defining traits. 
+/// A language model containing all the meta data regarding alphabets, letter groups and other low-level language defining traits.
 #[derive(Debug, Clone)]
 pub struct Language {
     /// The alphabet of the language.
-    pub alphabet: HashMap<char, Letter>,
+    pub alphabet: BTreeMap<char, Letter>,
     /// Collections of letters that are grouped together, such as vowels, consonants, etc.
-    pub letter_groups: HashMap<String, LetterGroup>,
+    pub letter_groups: BTreeMap<String, LetterGroup>,
 }
 
 impl Language {
@@ -23,7 +23,7 @@ impl Language {
             .unwrap_or(false)
     }
 
-    /// Converts a `char` into a paired data block. 
+    /// Converts a `char` into a paired data block.
     pub fn get_letter_pair(&self, letter: char) -> Option<(char, &Letter)> {
         if let Some(letter_data) = self.alphabet.get(&letter) {
             return Some((letter, letter_data));
@@ -40,7 +40,6 @@ impl Language {
         panic!("Letter not found in alphabet: {}", letter)
     }
 
-    
     /// Returns the letter group type this letter belongs to.
     pub fn letter_type(&self, letter: char) -> Option<&str> {
         self.letter_groups
@@ -55,8 +54,7 @@ impl Language {
             .find_map(|(_, g)| g.letters.contains(&letter).then_some(g))
     }
 
-
-    /// Gets the group name of the given letter. 
+    /// Gets the group name of the given letter.
     /// TODO: handle conditions where it might be in multiple groups. This could be the case with theoretical language models.
     pub fn get_group<S: AsRef<str>>(&self, group: S) -> Option<&LetterGroup> {
         self.letter_groups.get(group.as_ref())
@@ -79,11 +77,16 @@ lazy_static! {
     static ref DEFAULT_LANGUAGE: Language = {
         let letters_path = format!("{}/assets/english_letters.ron", env!("CARGO_MANIFEST_DIR"));
         let f_letters = File::open(&letters_path).expect("Failed opening english_letters.ron");
-        let alphabet: HashMap<char, Letter> = from_reader(f_letters).expect("Failed to parse english_letters.ron");
+        let alphabet: BTreeMap<char, Letter> =
+            from_reader(f_letters).expect("Failed to parse english_letters.ron");
 
-        let groups_path = format!("{}/assets/english_letter_groups.ron", env!("CARGO_MANIFEST_DIR"));
+        let groups_path = format!(
+            "{}/assets/english_letter_groups.ron",
+            env!("CARGO_MANIFEST_DIR")
+        );
         let f_groups = File::open(&groups_path).expect("Failed opening english_letter_groups.ron");
-        let letter_groups: HashMap<String, LetterGroup> = from_reader(f_groups).expect("Failed to parse english_letter_groups.ron");
+        let letter_groups: BTreeMap<String, LetterGroup> =
+            from_reader(f_groups).expect("Failed to parse english_letter_groups.ron");
 
         Language {
             alphabet,
@@ -98,8 +101,6 @@ impl Default for Language {
     }
 }
 
-
-
 // Tests
 #[cfg(test)]
 mod tests {
@@ -111,7 +112,5 @@ mod tests {
         for (letter, data) in engish.alphabet {
             println!("{}: {}", letter, data);
         }
-
-        
     }
 }

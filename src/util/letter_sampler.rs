@@ -1,6 +1,6 @@
 use crate::language::{Letter, LetterGroup};
 use rand::{distr::weighted::WeightedIndex, prelude::Distribution};
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 /// A neat little struct to quickly sample letters based on frequency.
 #[derive(Debug, Clone)]
@@ -12,20 +12,28 @@ pub struct LetterSampler {
 }
 
 impl LetterSampler {
-    /// Makes a new letter sampler from the given HashMap.
-    pub fn new(alphabet: &HashMap<char, Letter>) -> Self {
+    /// Makes a new letter sampler from the given BTreeMap.
+    /// Using a BTreeMap ensures that the iteration order is deterministic.
+    pub fn new(alphabet: &BTreeMap<char, Letter>) -> Self {
         let (alphabet_chars, base_weights): (Vec<char>, Vec<f32>) =
             alphabet.iter().map(|(c, l)| (*c, l.frequency)).unzip();
         let weights = WeightedIndex::new(&base_weights).unwrap();
-        Self { alphabet: alphabet_chars, weights }
+        Self {
+            alphabet: alphabet_chars,
+            weights,
+        }
     }
 
-    /// Makes a new letter sampler from the given letter's potential digraphs.
+    /// Makes a new, deterministic letter sampler from the given letter's potential digraphs.
     pub fn from_digraphs(letter: &Letter) -> Self {
-        let digraphs = letter.digraphs.clone();
-        let base_weights: Vec<f32> = digraphs.iter().map(|d| d.frequency).collect();
+        let mut digraphs = letter.digraphs.clone();
+        // Sort by character to ensure deterministic order.
+        digraphs.sort_by_key(|d| d.letter);
+        let (alphabet, base_weights): (Vec<char>, Vec<f32>) = digraphs
+            .into_iter()
+            .map(|d| (d.letter, d.frequency))
+            .unzip();
         let weights = WeightedIndex::new(&base_weights).unwrap();
-        let alphabet: Vec<char> = digraphs.iter().map(|d| d.letter).collect();
         Self { alphabet, weights }
     }
 
@@ -36,12 +44,7 @@ impl LetterSampler {
 
     /// Introduces a list of letters with their frequencies to the sampler.
     pub fn add_letters_with_freq(&mut self, letters: Vec<(char, &Letter)>) {
-        let mut current_weights: Vec<f32> = self
-            .weights
-            .weights()
-            .into_iter()
-            .map(|w| w)
-            .collect();
+        let mut current_weights: Vec<f32> = self.weights.weights().into_iter().map(|w| w).collect();
 
         for (char, letter_data) in letters {
             if !self.alphabet.contains(&char) {
@@ -54,16 +57,16 @@ impl LetterSampler {
 
     /// Filters out any letters in the given group from this sampler.
     pub fn remove_group(&mut self, group: &LetterGroup) {
-        let mut new_alphabet = Vec::new();
-        let mut new_weights = Vec::new();
-        for (i, letter) in self.alphabet.iter().enumerate() {
-            if !group.letters.contains(letter) {
-                new_alphabet.push(*letter);
-                new_weights.push(self.weights.weight(i).unwrap());
-            }
-        }
+        let (new_alphabet, new_weights): (Vec<char>, Vec<f32>) = self
+            .alphabet
+            .iter()
+            .zip(self.weights.weights())
+            .filter(|(c, _)| !group.letters.contains(c))
+            .map(|(c, w)| (*c, w))
+            .unzip();
+
         self.alphabet = new_alphabet;
-        self.weights = WeightedIndex::new(&new_weights).unwrap();
+        self.weights = WeightedIndex::new(new_weights).unwrap();
     }
 
     /// Removes the given letter from this sampler.
